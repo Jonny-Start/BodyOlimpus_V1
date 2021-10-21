@@ -1,20 +1,22 @@
 <?php
-class DB {
+abstract class DB
+{
     public $host = "localhost";
     public $user = "root";
     public $pass = ""; //Aklsd@$&%Sd@akls
     public $bd = "bodyolimpus";
-    
-    public static function connect()
+
+    public static function DBconnect()
     {
-        $objCnx = new mysqli("localhost", "root", "", "bodyolimpus");
-        if ($objCnx->connect_errno) {
-            echo "Error de conexion a la base de datos" . $objCnx->connect_error;
-            exit();
-        } else {
-            return $objCnx;
+        try {
+            $mysqli = new mysqli("localhost", "root", "", "bodyolimpus");
+            if (mysqli_connect_errno()) {
+                printf("Error de conexión: %s\n", mysqli_connect_error());
+                exit();
+            }
+        } catch (\Throwable $e) {
+            return 0;
         }
+        return $mysqli;
     }
 }
-
-

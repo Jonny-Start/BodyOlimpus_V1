@@ -16,4 +16,5 @@
  * 
  * 
  */
-require dirname(__FILE__).'/config/config.php';
+require dirname (__FILE__).'/config/config.php';
+header("location: ./controllers/login");
