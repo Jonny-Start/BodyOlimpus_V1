@@ -22,4 +22,4 @@ require(__DIR__ . '/../classes/BodyOlimpusLogin.php');
     // header("Location:".__FILE__);
 // }
 
-echo $twig->render('index.twig');
+echo $twig->render('login.twig');
