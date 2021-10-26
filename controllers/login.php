@@ -16,13 +16,16 @@ if (!isset($_SESSION['user_id'])) {
             header("Location: myaccount");
         } else {
             $message = 'Error, los datos ingresados no son correctos o no existen';
-            echo $twig->render('login.twig', compact('message'));
+            $nameView = 'bo_login'; 
+            echo $twig->render('login.twig', compact('message,nameView'));
         }
     } else {
-        echo $twig->render('login.twig');
+        $nameView = 'bo_login'; 
+        echo $twig->render('login.twig', compact('nameView'));
     }
 } else {
-    echo $twig->render('myaccount.twig');
+    $nameView = 'bo_myaccount'; 
+    echo $twig->render('myaccount.twig', compact('nameView'));
 }
 
 
