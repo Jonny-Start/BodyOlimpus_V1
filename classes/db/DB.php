@@ -1,22 +1,18 @@
 <?php
 abstract class DB
 {
-    public $host = "localhost";
-    public $user = "root";
-    public $pass = ""; //Aklsd@$&%Sd@akls
-    public $bd = "bodyolimpus";
-
     public static function DBconnect()
     {
+        $server = "localhost";
+        $username = "root";
+        $password = ""; //Aklsd@$&%Sd@akls
+        $database = "bodyolimpus";
+
         try {
-            $mysqli = new mysqli("localhost", "root", "", "bodyolimpus");
-            if (mysqli_connect_errno()) {
-                printf("Error de conexión: %s\n", mysqli_connect_error());
-                exit();
-            }
-        } catch (\Throwable $e) {
-            return 0;
+            $connection = new PDO("mysql:host=$server; dbname=$database;",$username,$password);
+        } catch (PDOException $e) {
+            die('Connected failed: ' .$e->getMessage());
         }
-        return $mysqli;
+        return $connection;
     }
 }

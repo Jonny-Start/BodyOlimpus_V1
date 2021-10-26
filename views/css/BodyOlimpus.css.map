@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,IAAI,AAAC,CACD,gBAAgB,CAAE,GAAG,CACxB",
+    "sources": [
+        "../../../BodyOlimpus_sources/BodyOlimpus.scss",
+        "../../../BodyOlimpus_sources/_BoMyAccount.scss"
+    ],
+    "names": [],
+    "file": "BodyOlimpus.css"
+}

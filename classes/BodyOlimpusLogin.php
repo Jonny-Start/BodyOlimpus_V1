@@ -1,20 +1,30 @@
 <?php
 class BodyOlimpusLogin
 {
-    public static function getLoging()
+    public static function getLoging($email, $pass)
     {
-        $email = 'jonnyalejandro.ca0910@gmail.com';
-        $pass = 'jonny123';
+        require(__DIR__ . './db/DB.php');
+        $sql = DB::DBconnect()->prepare("SELECT id_user, email, passwd FROM bo_user where email = :email");
+        $sql->bindParam(':email', $email);
+        $sql->execute();
+        $dataUser = $sql->fetch(PDO::FETCH_ASSOC);
+        return $dataUser;
+    }
+
+    public static function setUser($email, $pass)
+    {
         require(__DIR__ . './db/DB.php');
 
-        $sql = "SELECT * FROM bo_customer where email = '$email' and passwd = '$pass'";
-        $rt = DB::DBconnect()->query($sql);
-        $exist = $rt->num_rows;
-        $dataUser = [
-            'exist' => $exist,
-            'rt' => $rt
-        ];
-        return $dataUser;
+        $sql = DB::DBconnect()->prepare("INSERT INTO bo_user (email, passwd) VALUES (:email, :passwd)");
+        $sql->bindParam(':email', $email);
+        $passwd = password_hash($pass, PASSWORD_BCRYPT);
+        $sql->bindParam(':passwd', $passwd);
+        if ($sql->execute()) {
+            $message = "Usuario Creado";
+        } else {
+            $message = "Error para crearlo";
+        }
+        return $message;
     }
 
     public static function estaConected()
