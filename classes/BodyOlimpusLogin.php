@@ -1,19 +1,13 @@
 <?php
 class BodyOlimpusLogin
 {
-    public static function getLoging()
+    public static function getLoging($email, $pass)
     {
-        $email = 'jonnyalejandro.ca0910@gmail.com';
-        $pass = 'jonny123';
         require(__DIR__ . './db/DB.php');
-
-        $sql = "SELECT * FROM bo_customer where email = '$email' and passwd = '$pass'";
-        $rt = DB::DBconnect()->query($sql);
-        $exist = $rt->num_rows;
-        $dataUser = [
-            'exist' => $exist,
-            'rt' => $rt
-        ];
+        $sql = DB::DBconnect()->prepare("SELECT id, email, passwd FROM bo_user where email = :email and passwd = :passwd");
+        $sql->bindParam(':email', $email, ':passwd', $pass);
+        $sql->execute();
+        $dataUser = $sql->fetch(PDO::FETCH_ASSOC);
         return $dataUser;
     }
 

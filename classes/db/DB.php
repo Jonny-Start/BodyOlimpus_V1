@@ -9,14 +9,10 @@ abstract class DB
     public static function DBconnect()
     {
         try {
-            $mysqli = new mysqli("localhost", "root", "", "bodyolimpus");
-            if (mysqli_connect_errno()) {
-                printf("Error de conexión: %s\n", mysqli_connect_error());
-                exit();
-            }
-        } catch (\Throwable $e) {
-            return 0;
+            $connection = new PDO("localhost", "root", "", "bodyolimpus");
+        } catch (PDOException $e) {
+            die('Connected failed: ' .$e->getMessage());
         }
-        return $mysqli;
+        return $connection;
     }
 }
