@@ -1,15 +1,15 @@
 <?php
 abstract class DB
 {
-    public $host = "localhost";
-    public $user = "root";
-    public $pass = ""; //Aklsd@$&%Sd@akls
-    public $bd = "bodyolimpus";
-
     public static function DBconnect()
     {
+        $server = "localhost";
+        $username = "root";
+        $password = ""; //Aklsd@$&%Sd@akls
+        $database = "bodyolimpus";
+
         try {
-            $connection = new PDO("localhost", "root", "", "bodyolimpus");
+            $connection = new PDO("mysql:host=$server; dbname=$database;",$username,$password);
         } catch (PDOException $e) {
             die('Connected failed: ' .$e->getMessage());
         }

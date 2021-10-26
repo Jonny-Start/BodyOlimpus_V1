@@ -12,7 +12,9 @@
 </head>
 
 <body>
-<<<<<<< Updated upstream
+{% if message %}
+    <h1 style="color: black; font-size: 3em;">{{message}}</h1>
+{% endif %}
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -22,31 +24,17 @@
                         <div class="container-logo">
                             <img class="logo-img" src="././../views/img/logo1.png" />
                         </div>
-<<<<<<< HEAD
-                        <p class="text-muted"> Please enter your login and password!</p> 
-                        <input type="text" name="email" id="email" placeholder="Username"> 
-                        <input type="password" name="password" id="password" placeholder="Password"> 
-                        <a class="forgot text-muted" href="#">Forgot password?</a> 
-                        <input type="submit" name="ingresar" value="Ingresar">
-=======
                         <p class="text"> Por favor ingresa tu correo y contraseña!</p> 
-                        <input type="text" name="" placeholder="Correo electrónico"> 
-                            <input type="password" name="" placeholder="Contraseña"> 
+                        <input type="text" name="email" placeholder="Correo electrónico"> 
+                            <input type="password" name="password" placeholder="Contraseña"> 
                             <a class="text" href="#">¿Olvidaste tu contraseña?</a> <br>
                             <a class="text" href="./../../controllers/create_account">Regístrate como usuario nuevo</a> 
                             <input type="submit" name="" value="Ingresar" href="#">
-
->>>>>>> develop
                     </form>
                 </div>
             </div>
         </div>
     </div>
-=======
-{# href= "{{path ('homepage')}}" #}
-    <h1>Hola Mundo soy Login </h1>
-    <script src="src/script.js?version=0.0.2"></script>
->>>>>>> Stashed changes
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

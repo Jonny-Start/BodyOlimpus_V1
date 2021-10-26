@@ -11,19 +11,18 @@ if (!isset($_SESSION['user_id'])) {
 
         $dataUser = BodyOlimpusLogin::getLoging($email, $pass); // consulto en BD los dato que recojo
 
-        if (count($dataUser) > 0 && password_verify($_POST['password'], $dataUser['passwd'])) {
+        if (!empty($dataUser) && password_verify($_POST['password'], $dataUser['passwd'])) {
             $_SESSION['user_id'] = $dataUser['id_user'];
             header("Location: myaccount");
-        }else{
+        } else {
             $message = 'Error, los datos ingresados no son correctos o no existen';
+            echo $twig->render('login.twig', compact('message'));
         }
+    } else {
+        echo $twig->render('login.twig');
     }
 } else {
-    if (!empty($message)){
-        echo $twig->render('myaccount.twig', compact('message'));
-    } else{
-        echo $twig->render('myaccount.twig');
-    }   
+    echo $twig->render('myaccount.twig');
 }
 
 
@@ -50,11 +49,3 @@ if (!isset($_SESSION['user_id'])) {
 // session_destroy();
 // header("Location:".__FILE__);
 // }
-<<<<<<< Updated upstream
-=======
-
-echo $twig->render('login.twig');
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> develop
