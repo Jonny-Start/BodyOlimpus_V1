@@ -54,4 +54,7 @@ if (!isset($_SESSION['user_id'])) {
 =======
 
 echo $twig->render('login.twig');
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> develop

@@ -1,52 +1,44 @@
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="././../views/css/style.css">
+
+
+    <link rel="stylesheet" href="././../views/css/style_create_account.css>
     <title> Formulario de registro </title>
 </head>
 
 <body>
-<<<<<<< Updated upstream
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
                     
-                    <form action="./../../controllers/login.php" method="post" class="box">
+                    <form onsubmit="event.preventDefault()" class="box">
                         <div class="container-logo">
-                            <img class="logo-img" src="././../views/img/logo1.png" />
+                            <img class="logo-img" src="././../views/img/logo1.png />
                         </div>
-<<<<<<< HEAD
-                        <p class="text-muted"> Please enter your login and password!</p> 
-                        <input type="text" name="email" id="email" placeholder="Username"> 
-                        <input type="password" name="password" id="password" placeholder="Password"> 
-                        <a class="forgot text-muted" href="#">Forgot password?</a> 
-                        <input type="submit" name="ingresar" value="Ingresar">
-=======
-                        <p class="text"> Por favor ingresa tu correo y contraseña!</p> 
-                        <input type="text" name="" placeholder="Correo electrónico"> 
-                            <input type="password" name="" placeholder="Contraseña"> 
-                            <a class="text" href="#">¿Olvidaste tu contraseña?</a> <br>
-                            <a class="text" href="./../../controllers/create_account">Regístrate como usuario nuevo</a> 
-                            <input type="submit" name="" value="Ingresar" href="#">
+                        <p class="text"> Regístrate</p> 
+                        <input type="text" name="" required placeholder="Nombre"> 
+                        <input type="text" name="" required placeholder="Correo electrónico"> 
+                            <input type="password" required  name="" placeholder="Contraseña"> 
+                            <input type="password"required  name="" placeholder="Verifica Contraseña"> 
+                            <input type="submit" name="" value="Registrar" href="#">
 
->>>>>>> develop
                     </form>
                 </div>
             </div>
         </div>
     </div>
-=======
-{# href= "{{path ('homepage')}}" #}
-    <h1>Hola Mundo soy Login </h1>
-    <script src="src/script.js?version=0.0.2"></script>
->>>>>>> Stashed changes
+
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
