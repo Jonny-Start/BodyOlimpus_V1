@@ -50,3 +50,8 @@ if (!isset($_SESSION['user_id'])) {
 // session_destroy();
 // header("Location:".__FILE__);
 // }
+<<<<<<< Updated upstream
+=======
+
+echo $twig->render('login.twig');
+>>>>>>> Stashed changes
