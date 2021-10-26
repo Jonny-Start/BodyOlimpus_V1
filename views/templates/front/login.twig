@@ -1,50 +1,22 @@
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="././../views/css/style.css">
-    <title> Formulario de registro </title>
-</head>
-
-<body>
-{% if message %}
-    <h1 style="color: black; font-size: 3em;">{{message}}</h1>
-{% endif %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    
-                    <form action="./../../controllers/login.php" method="post" class="box">
-                        <div class="container-logo">
-                            <img class="logo-img" src="././../views/img/logo1.png" />
-                        </div>
-                        <p class="text"> Por favor ingresa tu correo y contraseña!</p> 
-                        <input type="text" name="email" placeholder="Correo electrónico"> 
-                            <input type="password" name="password" placeholder="Contraseña"> 
-                            <a class="text" href="#">¿Olvidaste tu contraseña?</a> <br>
-                            <a class="text" href="./../../controllers/create_account">Regístrate como usuario nuevo</a> 
-                            <input type="submit" name="" value="Ingresar" href="#">
-                    </form>
-                </div>
+{% include "hook/head.twig" %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                
+                <form action="./../../controllers/login.php" method="post" class="box">
+                    <div class="container-logo">
+                        <img class="logo-img" src="././../views/img/logo1.png" />
+                    </div>
+                    <p class="text"> Por favor ingresa tu correo y contraseña!</p> 
+                    <input type="text" name="email" placeholder="Correo electrónico"> 
+                        <input type="password" name="password" placeholder="Contraseña"> 
+                        <a class="text" href="#">¿Olvidaste tu contraseña?</a> <br>
+                        <a class="text" href="./../../controllers/create_account">Regístrate como usuario nuevo</a> 
+                        <input type="submit" name="" value="Ingresar" href="#">
+                </form>
             </div>
         </div>
     </div>
-</body>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
-</html>
+</div>
+{% include "hook/footer.twig" %}
