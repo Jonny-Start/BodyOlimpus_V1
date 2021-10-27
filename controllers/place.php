@@ -6,6 +6,6 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login");
     die();
 }else{
-    $nameView = 'bo_myaccount';
-    echo $twig->render('myaccount.twig', compact('nameView'));
+    $nameView = 'bo_place';
+    echo $twig->render('place.twig', compact('nameView'));
 }

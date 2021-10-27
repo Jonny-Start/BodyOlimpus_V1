@@ -13,5 +13,6 @@ if (!empty($_POST['email']) && !empty($_POST['passwd'])) {
         echo $twig->render('create_account.twig',compact('dataUser'));
     }
 } else {
-    echo $twig->render('create_account.twig');
+    $nameView = 'create_account';
+    echo $twig->render('create_account.twig', compact('nameView'));
 }
