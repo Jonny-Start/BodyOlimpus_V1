@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])) {
         } else {
             $message = 'Error, los datos ingresados no son correctos o no existen';
             $nameView = 'bo_login'; 
-            echo $twig->render('login.twig', compact('message,nameView'));
+            echo $twig->render('login.twig', compact('nameView'));
         }
     } else {
         $nameView = 'bo_login'; 
