@@ -1,6 +1,57 @@
 {% include "hook/head.twig" %}
-
-    <h1>Hola Mundo soy my Account</h1>
+<div class="container">
+			<div class="card">
+				<div id="container-button-logout"> 
+					<a id="button-logout"  name=""  href="./../../controllers/logout.php">
+						<i class="fas fa-sign-out-alt"></i>
+					</a>
+                </div>
+					<h4 class=""> BODY OLYMPUS</h4>
+					<div>
+						<ul>
+                        <div class="links">
+							<li>
+                                <a class="" href="">
+                                 <span>
+                                     <img class="" src="././../views/img/deporte.png"/>
+                                     <label>Ejercicios</label>
+                                 </span>
+                                </a>
+                            </li>
+							<li>
+                                <a class="" href="">
+                                 <span>
+                                    <img class="" src="././../views/img/frutas.png"/>
+                                    <label>Plan de alimentación</label>
+                                 </span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="links">
+                            	<li>
+                                <a class="" href="">
+                                 <span>
+                                    <img class="" src="././../views/img/barra-grafica.png"/>
+                                    <label>Tus avances</label>
+                                 </span>
+                                </a>
+                            </li>
+                            	<li>
+                                <a class="" href="">
+                                 <span>
+                                    <img class="" src="././../views/img/configuraciones.png"/>
+                                    <label>Ajustes</label>
+                                 </span>
+                                </a>
+                            </li>
+                        </div>
+						</ul>
+					</div>
+                    {# <div id="container-button">
+					<a id="button-next" type=" submit" name=" " href=" #">Continuar</a>
+			        </div> #}
+            </div>
+</div>
     <a href="./../../controllers/gender.php">Genero</a>
     <a href="./../../controllers/place.php">Lugar para hacer ejercicio</a>
     <a href="./../../controllers/logout.php">Cerrar Session</a>
