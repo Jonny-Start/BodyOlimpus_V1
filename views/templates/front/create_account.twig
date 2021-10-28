@@ -7,12 +7,18 @@
                     <div class="container-logo">
                         	<img class="logo-img" src="././../views/img/logo1.png"/>
                     </div>
-                    <p class="text-create-account"> Regístrate</p> 
-                    {# <input type="text" name="" required placeholder="Nombre">  #}
+                    <a class="text-create-account" href="./../../controllers/login">
+                        Si ya tienes cuenta 
+                        <span class="text-start" >Inicia sesión</span>
+                    </a>
+                    <input type="text" name="" required placeholder="Nombre"> 
                     <input type="text" name="email" required placeholder="Correo electrónico"> 
+                    {# <p class="text-create-account">Tu contraseña debe tener mínimo 10 caracteres</p> #}
                     <input type="password" required  name="passwd" placeholder="Contraseña"> 
-                    {# <input type="password"required  name="" placeholder="Verifica Contraseña">  #}
-                    <input type="submit" name="" value="Ingresar" href="#">
+                    <input type="password" required  name="" placeholder="Verifica Contraseña"> 
+                    <div class="container-button">
+                         <input type="submit" name="" value="Ingresar" href="#">
+                     </div>
                 </form>
             </div>
         </div>

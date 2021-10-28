@@ -1,7 +1,7 @@
 {% include "hook/head.twig" %}
 <div class="container">
-	<div class="row">
-		<div class="col-md-6">
+	<div class="">
+		<div class="">
 			<div class="card">
 				<form action="./../../controllers/login.php" method="post" class="form-login">
 					<div class="container-logo">
@@ -11,10 +11,12 @@
 						Por favor ingresa tu correo y contraseña!</p>
 					<input type="text" name="email" placeholder="Correo electrónico">
 					<input type="password" name="password" placeholder="Contraseña">
-					<a class="text-login" href="#">¿Olvidaste tu contraseña?</a>
+					<a class="text-login texts-link" href="#">¿Olvidaste tu contraseña?</a>
 					<br>
-					<a class="text-login" href="./../../controllers/create_account">Regístrate como usuario nuevo</a>
-					<input type="submit" name="" value="Ingresar" href="#">
+					<a class="text-login texts-link" href="./../../controllers/create_account">Regístrate como usuario nuevo</a>
+					<div class="container-button">
+					 	<input type="submit" name="" value="Ingresar" href="#">
+					</div>
 				</form>
 			</div>
 		</div>
