@@ -3,21 +3,27 @@
 	<div class="">
 		<div class="">
 			<div class="card">
-				<form action="./../../controllers/login.php" method="post" class="form-login">
-					<div class="container-logo">
-						<img class="logo-img" src="././../views/img/logo1.png"/>
+				<div class="form-login">
+					<div class="alingLeft">
+						<div class="container-logo">
+							<img class="logo-img" src="././../views/img/logo.png"/>
+						</div>
 					</div>
-					<p class="text-login">
-						Por favor ingresa tu correo y contraseña!</p>
-					<input type="text" name="email" placeholder="Correo electrónico">
-					<input type="password" name="password" placeholder="Contraseña">
-					<a class="text-login texts-link" href="#">¿Olvidaste tu contraseña?</a>
-					<br>
-					<a class="text-login texts-link" href="./../../controllers/create_account">Regístrate como usuario nuevo</a>
-					<div class="container-button">
-					 	<input type="submit" name="" value="Ingresar" href="#">
+					<div class="alingRigth">
+						<form action="./../../controllers/login.php" method="post">
+							<p class="text-login">
+								Por favor ingresa tu correo y contraseña!</p>
+							<input type="text" name="email" placeholder="Correo electrónico">
+							<input type="password" name="password" placeholder="Contraseña">
+							<a class="text-login texts-link" href="#">¿Olvidaste tu contraseña?</a>
+							<br>
+							<a class="text-login texts-link" href="./../../controllers/create_account">Regístrate como usuario nuevo</a>
+							<div class="container-button">
+								<input type="submit" name="" value="Ingresar" href="#">
+							</div>
+						</form>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>
