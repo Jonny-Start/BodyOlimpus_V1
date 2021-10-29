@@ -1,38 +1,36 @@
 {% include "hook/head.twig" %}
 <div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="card">
-				<form class="form-place">
-					<a class="button-back" type="submit" name="" href="#">
-						<i class="fas fa-arrow-left"></i>
-					</a>
-					<h5 class="text-welcome">BODY OLYMPUS</h5>
-					<h6 class="">¿En qué lugar harás ejercicio?</h6>
-					<div>
-						<ul>
-							<li>
-								<a class="" href="">
-									<span>
-									<img class="" src="././../views/img/casa.png"/>
-									<label>Casa</label>
-									</span>
-								</a>
-							</li>
-							<li>
-								<a class="" href="">
-									<span>
-									<img class="" src="././../views/img/gimnasio.png"/>
-									<label>Gimnasio</label>
-								</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<a class="button-next type" submit="" name="" href="#">Continuar</a>
-				</form>
+	<div class="card">
+		<form class="form-place">
+			<a id="button-back" type="submit" name="" href="./../../controllers/gender">
+				<i class="fas fa-arrow-left"></i>
+			</a>
+			{# <h5 class="text-welcome">BODY OLYMPUS</h5> #}
+			<h6 class="">¿En qué lugar harás ejercicio?</h6>
+			<div>
+				<ul>
+					<li>
+						<a class="" href="">
+							<span>
+								<img class="" src="././../views/img/casa.png"/>
+								<label>Casa</label>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a class="" href="">
+							<span>
+								<img class="" src="././../views/img/gimnasio.png"/>
+								<label>Gimnasio</label>
+							</span>
+						</a>
+					</li>
+				</ul>
 			</div>
-		</div>
+			<div id="container-button">
+				<a id="button-next" submit="" name="" href="#">Continuar</a>
+			</div>
+		</form>
 	</div>
 </div>
 {% include "hook/footer.twig" %}

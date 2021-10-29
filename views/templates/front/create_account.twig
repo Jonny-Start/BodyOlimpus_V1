@@ -1,15 +1,16 @@
 {% include "hook/head.twig" %}
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <form action="./../../controllers/create_account.php" method="post" class="form-create-account">
-                    <div class="container-logo">
-                        	<img class="logo-img" src="././../views/img/logo.png"/>
-                    </div>
+    <div class="card">
+        <div id="form-create-account">
+			<div class="alingLeft">
+				<div class="container-logo">
+					<img class="logo-img" src="././../views/img/logo.png"/>
+				</div>
+			</div>
+			<div class="alingRigth">
+                <form action="./../../controllers/create_account.php" method="post">
                     <a class="text-create-account" href="./../../controllers/login">
-                        Si ya tienes cuenta 
-                        <span class="text-start" >Inicia sesión</span>
+                        Si ya tienes cuenta <span class="text-start" >Inicia sesión</span>
                     </a>
                     <input type="text" name="first_name" required placeholder="Nombre"> 
                     <input type="text" name="last_name" required placeholder="Apellidos"> 
@@ -22,7 +23,7 @@
                      </div>
                 </form>
             </div>
-        </div>
+		</div>
     </div>
 </div>
 {% include "hook/footer.twig" %}

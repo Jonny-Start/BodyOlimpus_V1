@@ -14,15 +14,15 @@ if (!empty($_POST['email']) && !empty($_POST['passwd'])) {
 
     $dataUser = BodyOlimpusLogin::setUser($first_name, $last_name, $email, $pass, $createAccount_date);
     if ($dataUser == "Usuario Creado") {
-        $nameView = 'create_account';
+        $nameView = 'bo_create_account';
         $message = $dataUser;
         echo $twig->render('create_account.twig',compact('nameView','message'));
     }else{
-        $nameView = 'create_account';
+        $nameView = 'bo_create_account';
         $message = $dataUser;
         echo $twig->render('create_account.twig',compact('nameView','message'));
     }
 } else {
-    $nameView = 'create_account';
+    $nameView = 'bo_create_account';
     echo $twig->render('create_account.twig', compact('nameView'));
 }
