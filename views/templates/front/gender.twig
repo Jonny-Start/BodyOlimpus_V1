@@ -1,38 +1,36 @@
 {% include "hook/head.twig" %}
 <div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="card">
-				<form class="form-gender">
-					<a class="button-back" type="submit" name="" href="#">
-						<i class="fas fa-arrow-left"></i>
-					</a>
-					<h5 class=""> BODY OLYMPUS</h5>
-					<h6 class=""> ¿Cuál es tu género?</h6>
-					<div>
-						<ul>
-							<li>
-                                <a class="" href="">
-                                 <span>
-                                     <img class="" src="././../views/img/simbolo-femenino.png"/>
-                                     <label>Femenino</label>
-                                 </span>
-                                </a>
-                            </li>
-							<li>
-                                <a class="" href="">
-                                 <span>
-                                    <img class="" src="././../views/img/genero-masculino.png"/>
-                                    <label>Masculino</label>
-                                 </span>
-                                </a>
-                            </li>
-						</ul>
-					</div>
-					<a class="button-next type=" submit"" name=" " href=" #">Continuar</a>
-				</form>
+	<div class="card">
+		<form id="form-gender">
+			<a id="button-back" type="submit" name="" href="./../../controllers/myaccount">
+				<i class="fas fa-arrow-left"></i>
+			</a>
+			{# <h5 class=""> BODY OLYMPUS</h5> #}
+			<h5 class=""> ¿Cuál es tu género?</h5>
+			<div>
+				<ul>
+					<li>
+                        <a class="" href="">
+                            <span>
+                                <img class="" src="././../views/img/simbolo-femenino.png"/>
+                                <label>Femenino</label>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a class="" href="">
+                            <span>
+                            	<img class="" src="././../views/img/genero-masculino.png"/>
+                                <label>Masculino</label>
+                        	</span>
+                        </a>
+                    </li>
+				</ul>
 			</div>
-		</div>
+			<div id="container-button">
+				<a id="button-next" type=" submit" name=" "  href="./../../controllers/place">Continuar</a>
+			</div>
+		</form>
 	</div>
 </div>
 
