@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,AAAA,UAAU,AAAA,CACZ,gBAAgB,CAAE,IAAI,CACzB",
+    "sources": [
+        "../../../BodyOlimpus_sources/footer.scss"
+    ],
+    "names": [],
+    "file": "footer.css"
+}
