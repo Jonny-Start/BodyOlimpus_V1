@@ -1,36 +1,45 @@
 {% include "hook/head.twig" %}
 <div class="container">
 	<div class="card">
-		<form class="form-place">
-			<a id="button-back" type="submit" name="" href="./../../controllers/gender">
-				<i class="fas fa-arrow-left"></i>
-			</a>
+		<form  action="./../../controllers/place.php" method="post">
+			
 			{# <h5 class="text-welcome">BODY OLYMPUS</h5> #}
 			<h6 class="">¿En qué lugar harás ejercicio?</h6>
 			<div>
 				<ul>
 					<li>
-						<a class="" href="">
-							<span>
-								<img class="" src="././../views/img/casa.png"/>
-								<label>Casa</label>
-							</span>
-						</a>
+						<label class="option_item">
+							<input type="checkbox" class="checkbox" value="House" name="house" id="house">
+							<div class="option_inner casa">
+								<div class="tickmark"></div>
+								<div class="icon">
+									<i class="fas fa-home" aria-hidden="true"></i>
+								</div>
+								<div class="name">Casa</div>
+							</div>
+						</label>
 					</li>
 					<li>
-						<a class="" href="">
-							<span>
-								<img class="" src="././../views/img/gimnasio.png"/>
-								<label>Gimnasio</label>
-							</span>
-						</a>
+						<label class="option_item">
+							<input type="checkbox" class="checkbox" value="Gym" name="gym" id="gym">
+							<div class="option_inner gym">
+								<div class="tickmark"></div>
+								<div class="icon">
+									<i class="fas fa-dumbbell" aria-hidden="true"></i>
+								</div>
+								<div class="name">Gimnasio</div>
+							</div>
+						</label>
 					</li>
 				</ul>
 			</div>
-			<div id="container-button">
-				<a id="button-next" submit="" name="" href="#">Continuar</a>
-			</div>
+			<input id="button-submit" type="submit" name="" value="Guardar" href="#">
 		</form>
+		<div id="container-button">
+			<a id="button-next" type="submit" name="" href="./../../controllers/myaccount">
+				Siguiente <i class="fas fa-arrow-right"></i>
+			</a>
+		</div>
 	</div>
 </div>
 {% include "hook/footer.twig" %}
