@@ -2,9 +2,7 @@
 <div class="container">
 	<div class="card">
 		<form action="./../../controllers/gender.php" method="post">
-			<a id="button-back" type="submit" name="" href="./../../controllers/myaccount">
-				<i class="fas fa-arrow-left"></i>
-			</a>
+			
 			{# <h5 class=""> BODY OLYMPUS</h5> #}
 			<h5 class="">
 				¿Cuál es tu género?</h5>
@@ -36,13 +34,13 @@
 					</li>
 				</ul>
 			</div>
-			<div id="container-button">
 				<input id="button-submit" type="submit" name="" value="Guardar" href="#">
-			</div>
 		</form>
-		<div id="container-button">
-			<input id="button-submit" type="submit" name="" value="Continuar" href="#">
-		</div>
+			<div id="container-button">
+		<a id="button-next" type="submit" name="" href="./../../controllers/myaccount">
+			Siguiente <i class="fas fa-arrow-right"></i>
+		</a>
+			</div>
 	</div>
 </div>
 {% include "hook/footer.twig" %}
