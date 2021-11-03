@@ -1,8 +1,9 @@
 {% include "hook/head.twig" %}
 <div class="container">
 	<div class="card">
-		<form action="./../../controllers/gender.php" method="post">
-			
+		<form
+			action="./../../controllers/gender.php" method="post">
+
 			{# <h5 class=""> BODY OLYMPUS</h5> #}
 			<h5 class="">
 				¿Cuál es tu género?</h5>
@@ -34,7 +35,7 @@
 					</li>
 				</ul>
 			</div>
-				<input id="button-submit" type="submit" name="" value="Guardar" href="#">
+			<input id="button-submit" type="submit" name="" value="Guardar" href="#">
 		</form>
 		<div id="container-button">
 			<a id="button-next" type="submit" name="" href="./../../controllers/myaccount">
@@ -42,5 +43,8 @@
 			</a>
 		</div>
 	</div>
+</div>
+<div id="messagehelp" class="hide">
+	Hola Soy un mensaje de ayuda de la vista gender
 </div>
 {% include "hook/footer.twig" %}
