@@ -7,3 +7,18 @@ if ("serviceWorker" in navigator) {
         console.log(error);
     });
 }
+
+function goBack() {
+    window.history.back();
+}
+
+function helpMessage() {
+    messagehelp = document.querySelector('#messagehelp');
+    if (messagehelp) {
+        if (messagehelp.className.match(/(?:^|\s)hide(?!\S)/)) {
+            messagehelp.className = "";
+        } else {
+            messagehelp.className = messagehelp.className += "hide";
+        }
+    }
+}
