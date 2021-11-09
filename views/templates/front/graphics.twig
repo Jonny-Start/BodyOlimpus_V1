@@ -1,0 +1,50 @@
+{% include "hook/head.twig" %}
+<div class="container">
+	<div class="card">
+		<form
+			action="./../../controllers/exercise.php" method="post">
+
+			{# <h5 class=""> BODY OLYMPUS</h5> #}
+			<h5 class="">
+				Gráficas</h5>
+			{# <div>
+				<ul>
+					<li>
+						<label class="option_item">
+							<input type="checkbox" class="checkbox" value="Female" name="gender" id="gender">
+							<div class="option_inner femenino">
+								<div class="tickmark"></div>
+								<div class="icon">
+									<i class="fas fa-venus" aria-hidden="true"></i>
+								</div>
+								<div class="name">Mujer</div>
+							</div>
+						</label>
+					</li>
+					<li>
+						<label class="option_item">
+							<input type="checkbox" class="checkbox" value="Male" name="gender" id="gender">
+							<div class="option_inner masculino">
+								<div class="tickmark"></div>
+								<div class="icon">
+									<i class="fas fa-mars" aria-hidden="true"></i>
+								</div>
+								<div class="name">Hombre</div>
+							</div>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<input id="button-submit" type="submit" name="" value="Guardar" href="#">
+		</form>
+		<div id="container-button">
+			<a id="button-next" type="submit" name="" href="./../../controllers/myaccount">
+				Siguiente <i class="fas fa-arrow-right"></i>
+			</a>
+		</div>
+	</div>
+</div>
+<div id="messagehelp" class="hide">
+	Hola Soy un mensaje de ayuda de la vista gender
+</div> #}
+{% include "hook/footer.twig" %}
