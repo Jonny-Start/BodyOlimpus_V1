@@ -10,11 +10,15 @@
         "../../../BodyOlimpus_sources/_BoPlace.scss",
         "../../../BodyOlimpus_sources/_BoFooter.scss",
         "../../../BodyOlimpus_sources/_BoSettings.scss",
+<<<<<<< HEAD
         "../../../BodyOlimpus_sources/_BoNotifications.scss",
         "../../../BodyOlimpus_sources/_BoFeeding.scss",
         "../../../BodyOlimpus_sources/_BoExercise.scss",
         "../../../BodyOlimpus_sources/_BoGraphics.scss",
         "../../../BodyOlimpus_sources/_BoWeight.scss"
+=======
+        "../../../BodyOlimpus_sources/_BoProfile.scss"
+>>>>>>> 9d127ad4d396a1927a33d072485c9145c5735098
     ],
     "names": [],
     "file": "BodyOlimpus.css"
