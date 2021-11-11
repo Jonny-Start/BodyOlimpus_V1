@@ -32,7 +32,7 @@ class BodyOlimpusDataUser
     public static function updateDataUserProfile($id_user, $first_name, $last_name, $email, $phone_number, $actual_weight, $last_update)
     {
         require(__DIR__ . './db/DB.php');
-        $sql = DB::DBconnect()->prepare("UPDATE bo_user SET first_name = :first_name, last_name = :last_name, email = :email, phone_number = :phone_number, actual_weight = :actual_weight, last_update = :last_update WHERE bo_user.id_user = :id_user;");
+        $sql = DB::DBconnect()->prepare("UPDATE bo_user SET first_name = :first_name, last_name = :last_name, email = :email, phone_number = :phone_number, actual_weight = :actual_weight, last_update = :last_update WHERE bo_user.id_user = :id_user");
         $sql->bindParam(':id_user', $id_user);
         $sql->bindParam(':first_name', $first_name);
         $sql->bindParam(':last_name', $last_name);
@@ -42,11 +42,16 @@ class BodyOlimpusDataUser
         // $sql->bindParam(':exercise_space', $exercise_space);
         $sql->bindParam(':actual_weight', $actual_weight);
         $sql->bindParam(':last_update', $last_update);
+
         if ($sql->execute()) {
             $message = "Datos de usuario actualizado";
         } else {
             $message = "Error al actualizar los datos de usuario";
         }
+
+        // $sql->closeCursor(); // opcional en MySQL, dependiendo del controlador de base de datos puede ser obligatorio
+        // $sql = null; // obligado para cerrar la conexión
+
         return $message;
     }
 

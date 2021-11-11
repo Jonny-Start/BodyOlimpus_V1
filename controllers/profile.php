@@ -21,15 +21,18 @@ if (!isset($_SESSION['user_id'])) {
         $actual_weight = $_POST['actual_weight'];
         $last_update = $_POST['last_update'];
 
+        $date_now = date("Y-m-d");
+
         $respond = BodyOlimpusDataUser::updateDataUserProfile($id_user, $first_name, $last_name, $email, $phone_number, $actual_weight, $last_update);
+        // $dataUser = BodyOlimpusDataUser::getDataUserProfile($id_user);
         if ($respond == "Datos de usuario actualizado") {
             $nameView = 'bo_profile';
             $message = $respond;
-            echo $twig->render('profile.twig', compact('nameView', 'message'));
+            echo $twig->render('profile.twig', compact('nameView', 'message','dataUser'));
         } else {
             $nameView = 'bo_profile';
             $message = $respond;
-            echo $twig->render('profile.twig', compact('nameView', 'message'));
+            echo $twig->render('profile.twig', compact('nameView', 'message','dataUser'));
         }
     } else {
         $id_user = $_SESSION['user_id'];
