@@ -4,56 +4,52 @@
 		<div><img src="././../views/img/cilueta.png" alt="Banner de silueta"/></div>
 		<form action="./../../controllers/profile.php" method="post">
 			<h3>PERFIL</h3>
-			<ul>
-				<li>
+			<div id="section">
+				<div class="dates">
 					<label>
 						<p>Nombres</p>
 						<input type="text" name="first_name" id="first_name" value="{{dataUser.first_name}}">
 					</label>
-				</li>
-				<li>
 					<label>
 						<p>Apellidos</p>
 						<input type="text" name="last_name" id="last_name" value="{{dataUser.last_name}}">
 					</label>
-				</li>
-				<li>
-					<label>
-						<p>Correo</p>
-						<input type="text" name="email" id="email" value="{{dataUser.email}}">
-					</label>
-				</li>
-				<li>
-					<label>
-						<p>Sexo</p>
-						<input type="text" name="gender" id="gender" value="{{dataUser.gender}}">
-					</label>
-				</li>
-				<li>
+				</div>
+				
+				<div class="dates">
 					<label>
 						<p>Edad</p>
 						<input type="number" name="edad" id="edad" value="20">
 					</label>
-				</li>
-				<li>
-					<label>
-						<p>Numero de telefono</p>
-						<input type="number" name="phone_number" id="phone_number" value="{{dataUser.phone_number}}">
-					</label>
-				</li>
-				<li>
-					<label>
-						<p>Espacio de ejercicio</p>
-						<input type="text" name="exercise_space" id="exercise_space" value="{{dataUser.exercise_space}}">
-					</label>
-				</li>
-				<li>
 					<label>
 						<p>Peso actual</p>
 						<input type="text" name="actual_weight" id="actual_weight" value="{{dataUser.actual_weight}}">
 					</label>
-				</li>
-			</ul>
+				</div>
+				
+				<div class="dates">
+					<label>
+						<p>Sexo</p>
+						<input type="text" name="gender" id="gender" value="{{dataUser.gender}}">
+					</label>
+					<label>
+						<p>Entrenarás en</p>
+						<input type="text" name="exercise_space" id="exercise_space" value="{{dataUser.exercise_space}}">
+					</label>
+				</div>
+				<div class="dates">
+					<label>
+						<p>Celular</p>
+						<input type="number" name="phone_number" id="phone_number" value="{{dataUser.phone_number}}">
+					</label>
+				</div>
+				<div class="dates">
+					<label>
+						<p>Correo</p>
+						<input type="text" name="email" id="email" value="{{dataUser.email}}">
+					</label>
+				</div>
+			</div>
 			<input type="hiden" name="last_update" id="last_update" value="{{date_now}}">
 			<br/>
 			<input id="button-submit" type="submit" name="" value="Guardar">
