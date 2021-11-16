@@ -15,11 +15,17 @@ if (!isset($_SESSION['user_id'])) {
         $dataUser = BodyOlimpusDataUser::updateGender($gender,$id_user);
         if ($dataUser == "Genero actualizado") {
             $nameView = 'bo_gender';
-            $message = $dataUser;
+            $message = [
+                'type' => 'success',
+                'text' => $dataUser
+            ];
             echo $twig->render('gender.twig', compact('nameView', 'message'));
         } else {
             $nameView = 'bo_gender';
-            $message = $dataUser;
+            $message = [
+                'type' => 'error',
+                'text' => $dataUser
+            ];
             echo $twig->render('gender.twig', compact('nameView', 'message'));
         }
     } else {

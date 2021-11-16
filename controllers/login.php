@@ -15,7 +15,10 @@ if (!isset($_SESSION['user_id'])) {
             $_SESSION['user_id'] = $dataUser['id_user'];
             header("Location: myaccount");
         } else {
-            $message = 'Error, los datos ingresados no son correctos o no existen';
+            $message = [
+                'type' => 'error',
+                'text' => 'Error, los datos ingresados no son correctos o no existen'
+            ];
             $nameView = 'bo_login'; 
             echo $twig->render('login.twig', compact('nameView', 'message'));
         }

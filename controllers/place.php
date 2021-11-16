@@ -6,20 +6,26 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: login");
     die();
-}else{
+} else {
     if (!empty($_POST['place'])) {
 
         $place = $_POST['place'];
         $id_user = $_SESSION['user_id'];
 
-        $dataUser = BodyOlimpusDataUser::updatePlace($place,$id_user);
+        $dataUser = BodyOlimpusDataUser::updatePlace($place, $id_user);
         if ($dataUser == "place actualizado") {
             $nameView = 'bo_place';
-            $message = $dataUser;
+            $message = [
+                'type' => 'success',
+                'text' => $dataUser
+            ];
             echo $twig->render('place.twig', compact('nameView', 'message'));
         } else {
             $nameView = 'bo_place';
-            $message = $dataUser;
+            $message = [
+                'type' => 'error',
+                'text' => $dataUser
+            ];
             echo $twig->render('place.twig', compact('nameView', 'message'));
         }
     } else {

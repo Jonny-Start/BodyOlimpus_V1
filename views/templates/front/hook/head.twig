@@ -13,7 +13,7 @@
 	</head>
 	<body id='{{nameView}}'>
 		{% if message %}
-		<div id="bo_Notifications">
-			<h5>{{message}}</h5>
-		</div>
+			<div id="bo_Notifications" class="{{message.type}}">
+				<h5>{{message.text}}</h5>
+			</div>
 		{% endif %}

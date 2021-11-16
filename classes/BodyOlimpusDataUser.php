@@ -42,16 +42,11 @@ class BodyOlimpusDataUser
         // $sql->bindParam(':exercise_space', $exercise_space);
         $sql->bindParam(':actual_weight', $actual_weight);
         $sql->bindParam(':last_update', $last_update);
-
         if ($sql->execute()) {
             $message = "Datos de usuario actualizado";
         } else {
             $message = "Error al actualizar los datos de usuario";
         }
-
-        // $sql->closeCursor(); // opcional en MySQL, dependiendo del controlador de base de datos puede ser obligatorio
-        // $sql = null; // obligado para cerrar la conexión
-
         return $message;
     }
 
@@ -63,4 +58,18 @@ class BodyOlimpusDataUser
         $rows = $sql->fetchAll();
         return $rows[0];
     }
+
+    public static function addWeight($weight, $id_user)
+    {
+        $date_weight = date("Y-m-d");
+        require(__DIR__ . './db/DB.php');
+        $sql = DB::DBconnect()->query("INSERT INTO bo_weight (`id_weight`, `weight`, `id_user`, `date_weight`) VALUES (NULL, '$weight', '$id_user', '$date_weight')");
+        if (($sql->fetchAll()) > 0) {
+            $message = "Peso actualizado";
+        } else {
+            $message = "Error al actualizar el Peso";
+        }
+        return $message;
+    }
+
 }

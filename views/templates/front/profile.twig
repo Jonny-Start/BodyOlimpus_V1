@@ -1,56 +1,56 @@
 {% include "hook/head.twig" %}
+{# <h3>PERFIL</h3> #}
+
 <div id="container">
 	<div class="card">
-		<div><img src="././../views/img/cilueta.png" alt="Banner de silueta"/></div>
+		<div id="tarjetHead">
+			<img src="././../views/img/cilueta.png" alt="Banner de silueta"/>
+			<label>
+				<i class="fas fa-pen"></i>
+				<input type="text" name="first_name" id="first_name" value="{{dataUser.first_name}}">
+			</label>
+			<label>
+				<i class="fas fa-pen"></i>
+				<input type="text" name="last_name" id="last_name" value="{{dataUser.last_name}}">
+			</label>
+		</div>
 		<form action="./../../controllers/profile.php" method="post">
-			<h3>PERFIL</h3>
 			<div id="section">
-				<div class="dates">
-					<label>
-						<p>Nombres</p>
-						<input type="text" name="first_name" id="first_name" value="{{dataUser.first_name}}">
-					</label>
-					<label>
-						<p>Apellidos</p>
-						<input type="text" name="last_name" id="last_name" value="{{dataUser.last_name}}">
-					</label>
-				</div>
-				
-				<div class="dates">
-					<label>
-						<p>Edad</p>
-						<input type="number" name="edad" id="edad" value="20">
-					</label>
-					<label>
-						<p>Peso actual</p>
-						<input type="text" name="actual_weight" id="actual_weight" value="{{dataUser.actual_weight}}">
-					</label>
-				</div>
-				
-				<div class="dates">
-					<label>
-						<p>Sexo</p>
+				<label>
+					<i class="fas fa-pen"></i>
+					Edad
+					<input type="date" name="edad" id="edad" value="20">
+				</label>
+				<label>
+					<i class="fas fa-pen"></i>
+					Peso actual
+					<input type="text" name="actual_weight" id="actual_weight" value="{{dataUser.actual_weight}}">
+				</label>
+				<label>
+					<a href="./../../controllers/gender">
+						<i class="fas fa-pen"></i>
+						Sexo
 						<input type="text" name="gender" id="gender" value="{{dataUser.gender}}">
-					</label>
-					<label>
-						<p>Entrenarás en</p>
+					</a>
+				</label>
+				<label>
+					<a href="./../../controllers/place">
+						<i class="fas fa-pen"></i>
+						Entrenas
 						<input type="text" name="exercise_space" id="exercise_space" value="{{dataUser.exercise_space}}">
-					</label>
-				</div>
-				<div class="dates">
-					<label>
-						<p>Celular</p>
-						<input type="number" name="phone_number" id="phone_number" value="{{dataUser.phone_number}}">
-					</label>
-				</div>
-				<div class="dates">
-					<label>
-						<p>Correo</p>
-						<input type="text" name="email" id="email" value="{{dataUser.email}}">
-					</label>
-				</div>
+					</a>
+				</label>
+				<label>
+					<i class="fas fa-pen"></i>
+					Celular
+					<input type="number" name="phone_number" id="phone_number" value="{{dataUser.phone_number}}">
+				</label>
+				<label>
+					<i class="fas fa-pen"></i>
+					Correo
+					<input type="text" name="email" id="email" value="{{dataUser.email}}">
+				</label>
 			</div>
-			<input type="hiden" name="last_update" id="last_update" value="{{date_now}}">
 			<br/>
 			<input id="button-submit" type="submit" name="" value="Guardar">
 		</form>
