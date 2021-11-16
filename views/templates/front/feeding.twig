@@ -1,0 +1,29 @@
+{% include "hook/head.twig" %}
+<div class="container">
+	<div class="card">
+		<h5> Plan de Alimentacion</h5>
+		<form action="./../../controllers/feeding.php" method="post">
+			<div id="tarjetas">
+  			  	<a class=" links" href="#">
+                	<div class="elementos">
+                    	<p>Tip #1 de alimentación</p>
+                	</div>
+            	</a>
+   				<a class=" links" href="#">
+                	<div class="elementos">
+                    	<p>Tip #1 de alimentación</p>
+               	 	</div>
+            	</a>
+				<a class=" links" href="#">
+                	<div class="elementos">
+                    	<p>Tip #1 de alimentación</p>
+               	 	</div>
+            	</a>
+       	 	</div>
+		</form>
+	</div>
+</div>
+<div id="messagehelp" class="hide">
+	Hola Soy un mensaje de ayuda de la vista Alimentacion
+</div> 
+{% include "hook/footer.twig" %}

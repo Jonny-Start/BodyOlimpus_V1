@@ -1,0 +1,46 @@
+{% include "hook/head.twig" %}
+<div class="container">
+	<div class="card">
+		<form  action="./../../controllers/place.php" method="post">
+			<h5 class="">¿En qué lugar entrenarás?</h5>
+			<div>
+				<ul>
+					<li>
+						<label class="option_item">
+							<input type="checkbox" class="checkbox" value="House" name="place" id="house">
+							<div class="option_inner casa">
+								<div class="tickmark"></div>
+								<div class="icon">
+									<i class="fas fa-home" aria-hidden="true"></i>
+								</div>
+								<div class="name">Casa</div>
+							</div>
+						</label>
+					</li>
+					<li>
+						<label class="option_item">
+							<input type="checkbox" class="checkbox" value="Gym" name="place" id="gym">
+							<div class="option_inner gym">
+								<div class="tickmark"></div>
+								<div class="icon">
+									<i class="fas fa-dumbbell" aria-hidden="true"></i>
+								</div>
+								<div class="name">Gimnasio</div>
+							</div>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<input id="button-submit" type="submit" name="" value="Guardar" href="#">
+		</form>
+		<div id="container-button">
+			<a id="button-next" type="submit" name="" href="./../../controllers/myaccount">
+				Siguiente <i class="fas fa-arrow-right"></i>
+			</a>
+		</div>
+	</div>
+</div>
+<div id="messagehelp" class="hide">
+	Hola Soy un mensaje de ayuda de la vista place
+</div>
+{% include "hook/footer.twig" %}

@@ -1,0 +1,32 @@
+{% include "hook/head.twig" %}
+<div class="container">
+    <div class="card">
+        <div id="form-create-account">
+			<div class="alingLeft">
+				<div class="container-logo">
+					<img class="logo-img" src="././../views/img/logo-bo.png"/>
+				    <p id="text-slogan">Por una mejor salud y un cuerpo olímpico, 
+                        <span id="text-title"> BODY OLYMPUS </span> está contigo.
+                    </p>
+                </div>
+			</div>
+			<div class="alingRigth">
+                <form action="./../../controllers/create_account.php" method="post">
+                    <a class="text-create-account" href="./../../controllers/login">
+                        Si ya tienes cuenta <span class="text-start" >Inicia sesión</span>
+                    </a>
+                    <input type="text" name="first_name" required placeholder="Nombre"> 
+                    <input type="text" name="last_name" required placeholder="Apellidos"> 
+                    <input type="text" name="email" required placeholder="Correo electrónico"> 
+                    {# <p class="text-create-account">Tu contraseña debe tener mínimo 10 caracteres</p> #}
+                    <input type="password" required  name="passwd" placeholder="Contraseña"> 
+                    <input type="password" required  name="verify_passwd" placeholder="Verifica Contraseña"> 
+                    <div class="container-button">
+                         <input type="submit" name="" value="Ingresar">
+                     </div>
+                </form>
+            </div>
+		</div>
+    </div>
+</div>
+{% include "hook/footer.twig" %}

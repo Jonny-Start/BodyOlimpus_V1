@@ -1,0 +1,17 @@
+{% include "hook/head.twig" %}
+
+<div class="container">
+	<form action="./../../controllers/weight.php" method="post">
+		<section class="form-register">
+			<h4>Ingresa tu peso actual</h4>
+			<input class="controls" type="text" name="weight" id="weight" placeholder="Ingrese tu peso actual" autocomplete="off">
+			<input class="botons" type="submit" name="submitWeight" id="submitWeight" value="Guardar">
+		</section>
+	</form>
+</div>
+
+<div id="messagehelp" class="hide">
+	Hola Soy un mensaje de ayuda de la vista weight
+</div>
+
+{% include "hook/footer.twig" %}
