@@ -1,51 +1,41 @@
 {% include "hook/head.twig" %}
 <div class="container">
 	<div class="card">
-		<h4 class="">BODY OLYMPUS</h4>
-		<div>
-			<ul>
-				<div class="links">
-					<li>
-						<a class="" href="./../../controllers/exercise">
-							<span>
-								<img class="" src="././../views/img/deporte.png"/>
-								<label>Plan de Ejercicios</label>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a class="" href="./../../controllers/feeding">
-							<span>
-								<img class="" src="././../views/img/frutas.png"/>
-								<label>Plan de alimentación</label>
-							</span>
-						</a>
-					</li>
-				</div>
-				<div class="links">
-					<li>
-						<a class="" href="./../../controllers/weight">
-							<span>
-								<img class="" src="././../views/img/bascula.png"/>
-								<label>Registra tu peso</label>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a class="" href="./../../controllers/graphics">
-							<span>
-								<img class="" src="././../views/img/barra-grafica.png"/>
-								<label>Tus avances</label>
-							</span>
-						</a>
-					</li>
-				</div>
-			</ul>
+		<div id="form-myaccount">
+			<h4 class="">BODY OLYMPUS</h4>
+			<div  id="container-myaccount">
+				<a class="" href="./../../controllers/exercise">
+					<div class="content-myaccount">
+						<img class="" src="././../views/img/deporte.png"/>
+						<span>Plan de Ejercicios</span>
+					</div>
+				</a>
+				<a class="" href="./../../controllers/feeding">
+					<div class="content-myaccount">
+						<img class="" src="././../views/img/frutas.png"/>
+						<span>Plan de alimentación</span>
+					</div>
+				</a>
+				<a class="" href="./../../controllers/weight">
+					<div class="content-myaccount">
+						<img class="" src="././../views/img/bascula.png"/>
+						<span>Registra tu peso</span>
+					</div>
+				</a>
+				<a class="" href="./../../controllers/graphics">
+					<div class="content-myaccount">
+						<img class="" src="././../views/img/barra-grafica.png"/>
+						<span>Tus avances</span>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
 <div id="messagehelp" class="hide">
 	Hola Soy un mensaje de ayuda de la vista myaccount
 </div>
+
+
 
 {% include "hook/footer.twig" %}

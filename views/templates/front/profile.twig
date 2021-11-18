@@ -5,50 +5,58 @@
 	<div class="card">
 		<div id="tarjetHead">
 			<img src="././../views/img/cilueta.png" alt="Banner de silueta"/>
-			<label>
-				<i class="fas fa-pen"></i>
-				<input type="text" name="first_name" id="first_name" value="{{dataUser.first_name}}">
-			</label>
-			<label>
-				<i class="fas fa-pen"></i>
-				<input type="text" name="last_name" id="last_name" value="{{dataUser.last_name}}">
-			</label>
 		</div>
 		<form action="./../../controllers/profile.php" method="post">
 			<div id="section">
 				<label>
+					
+					<input type="text" name="first_name" id="first_name" value="{{dataUser.first_name}}">
 					<i class="fas fa-pen"></i>
-					Edad
-					<input type="date" name="edad" id="edad" value="20">
 				</label>
 				<label>
+					
+					<input type="text" name="last_name" id="last_name" value="{{dataUser.last_name}}">
 					<i class="fas fa-pen"></i>
+				</label>
+				<label>
+					
+					Edad
+					<input type="date" name="edad" id="edad" value="20">
+					<i class="fas fa-pen"></i>
+				</label>
+				<label>
+					
 					Peso actual
 					<input type="text" name="actual_weight" id="actual_weight" value="{{dataUser.actual_weight}}">
+					<i class="fas fa-pen"></i>
 				</label>
 				<label>
 					<a href="./../../controllers/gender">
-						<i class="fas fa-pen"></i>
+						
 						Sexo
 						<input type="text" name="gender" id="gender" value="{{dataUser.gender}}">
+						<i class="fas fa-pen"></i>
 					</a>
 				</label>
 				<label>
 					<a href="./../../controllers/place">
-						<i class="fas fa-pen"></i>
-						Entrenas
+						
+						Entrenas en
 						<input type="text" name="exercise_space" id="exercise_space" value="{{dataUser.exercise_space}}">
+						<i class="fas fa-pen"></i>
 					</a>
 				</label>
 				<label>
-					<i class="fas fa-pen"></i>
+					
 					Celular
 					<input type="number" name="phone_number" id="phone_number" value="{{dataUser.phone_number}}">
+					<i class="fas fa-pen"></i>
 				</label>
 				<label>
-					<i class="fas fa-pen"></i>
+					
 					Correo
 					<input type="text" name="email" id="email" value="{{dataUser.email}}">
+					<i class="fas fa-pen"></i>
 				</label>
 			</div>
 			<br/>

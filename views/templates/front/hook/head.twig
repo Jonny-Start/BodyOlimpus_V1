@@ -12,8 +12,15 @@
 		<title>BodyOlimpus</title>
 	</head>
 	<body id='{{nameView}}'>
+	<header>
+    	<div id="bo_header"> 
+        	<div id="container-header"> 
+         	</div>
+   		</div>
+	</header>
 		{% if message %}
 			<div id="bo_Notifications" class="{{message.type}}">
 				<h5>{{message.text}}</h5>
 			</div>
 		{% endif %}
+
