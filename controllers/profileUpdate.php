@@ -21,14 +21,14 @@ if (!isset($_SESSION['user_id'])) {
 
         $respond = BodyOlimpusDataUser::updateDataUserProfile($id_user, $first_name, $last_name, $height_user, $date_nac, $email, $phone_number, $last_update);
         $dataUser = $respond['dataUser'];
+
+        $fecha_nacimiento = new DateTime($dataUser['date_nac']);
+        $hoy = new DateTime();
+        $edad = $hoy->diff($fecha_nacimiento);
+        $old = $edad->y;
+
         if ($respond['message'] == "Datos de usuario actualizado") {
             $nameView = 'bo_profile';
-
-            $fecha_nacimiento = new DateTime($dataUser['date_nac']);
-            $hoy = new DateTime();
-            $edad = $hoy->diff($fecha_nacimiento);
-            $old = $edad->y;
-
             $message = [
                 'type' => 'success',
                 'text' => $respond['message']
@@ -36,12 +36,6 @@ if (!isset($_SESSION['user_id'])) {
             echo $twig->render('profile.twig', compact('nameView', 'message', 'dataUser', 'old'));
         } else {
             $nameView = 'bo_profileUpdate';
-
-            $fecha_nacimiento = new DateTime($dataUser['date_nac']);
-            $hoy = new DateTime();
-            $edad = $hoy->diff($fecha_nacimiento);
-            $old = $edad->y;
-
             $message = [
                 'type' => 'error',
                 'text' => $respond['message']
