@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
         $id_user = $_SESSION['user_id'];
 
         $dataUser = BodyOlimpusDataUser::addWeight($weight, $id_user);
-        if ($dataUser == "Peso actualizado") {
+        if ($dataUser == "Peso actualizado y registrado en tu perfil") {
             $nameView = 'bo_weight';
             $message = [
                 'type' => 'success',

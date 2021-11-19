@@ -29,25 +29,42 @@ class BodyOlimpusDataUser
         return $message;
     }
 
-    public static function updateDataUserProfile($id_user, $first_name, $last_name, $email, $phone_number, $actual_weight, $last_update)
+    public static function updateDataUserProfile($id_user, $first_name, $last_name, $height_user, $date_nac, $email, $phone_number, $last_update)
     {
         require(__DIR__ . './db/DB.php');
-        $sql = DB::DBconnect()->prepare("UPDATE bo_user SET first_name = :first_name, last_name = :last_name, email = :email, phone_number = :phone_number, actual_weight = :actual_weight, last_update = :last_update WHERE bo_user.id_user = :id_user");
+        $sql = DB::DBconnect()->prepare("UPDATE bo_user SET first_name = :first_name, last_name = :last_name, height_user = :height_user, date_nac = :date_nac, email = :email, phone_number = :phone_number, last_update = :last_update WHERE bo_user.id_user = :id_user");
         $sql->bindParam(':id_user', $id_user);
         $sql->bindParam(':first_name', $first_name);
         $sql->bindParam(':last_name', $last_name);
         $sql->bindParam(':email', $email);
         $sql->bindParam(':phone_number', $phone_number);
-        // $sql->bindParam(':gender', $gender);
-        // $sql->bindParam(':exercise_space', $exercise_space);
-        $sql->bindParam(':actual_weight', $actual_weight);
+        $sql->bindParam(':height_user', $height_user);
+        $sql->bindParam(':date_nac', $date_nac);
         $sql->bindParam(':last_update', $last_update);
         if ($sql->execute()) {
             $message = "Datos de usuario actualizado";
+
+            $sqli = DB::DBconnect()->query("SELECT * FROM `bo_user` WHERE id_user = $id_user");
+            $rows = $sqli->fetchAll();
+            $rows[0];
+
+            $result = [
+                'message' => $message,
+                'dataUser' => $rows[0]
+            ];
+
         } else {
             $message = "Error al actualizar los datos de usuario";
+            $sqli = DB::DBconnect()->query("SELECT * FROM `bo_user` WHERE id_user = $id_user");
+            $rows = $sqli->fetchAll();
+            $rows[0];
+
+            $result = [
+                'message' => $message,
+                'dataUser' => $rows[0]
+            ];
         }
-        return $message;
+        return $result;
     }
 
     public static function getDataUserProfile($id_user)
@@ -64,8 +81,12 @@ class BodyOlimpusDataUser
         $date_weight = date("Y-m-d");
         require(__DIR__ . './db/DB.php');
         $sql = DB::DBconnect()->query("INSERT INTO bo_weight (`id_weight`, `weight`, `id_user`, `date_weight`) VALUES (NULL, '$weight', '$id_user', '$date_weight')");
+        $sqli = DB::DBconnect()->query("UPDATE bo_user SET actual_weight = '$weight' WHERE bo_user.id_user = '$id_user'");
         if (($sql->fetchAll()) > 0) {
-            $message = "Peso actualizado";
+            $message = "Peso registrado pero no se actualizo en tu perfil";
+            if(($sqli->fetchAll()) > 0){
+                $message = "Peso actualizado y registrado en tu perfil";
+            }
         } else {
             $message = "Error al actualizar el Peso";
         }

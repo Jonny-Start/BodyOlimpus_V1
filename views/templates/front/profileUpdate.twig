@@ -1,0 +1,76 @@
+{% include "hook/head.twig" %}
+<h4 class="textHeader">PERFIL (Actualizaci&oacute;n de datos)</h4>
+
+<div id="container">
+	<div class="card">
+		<div id="tarjetHead">
+			<img src="././../views/img/cilueta.png" alt="Banner de silueta"/>
+		</div>
+		<form action="./../../controllers/profileUpdate.php" method="post">
+			<div id="section">
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="first_name">Nombres</label>
+						<input type="text" placeholder="Nombres" class="form-control" name="first_name" id="first_name" value="{{dataUser.first_name}}">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="last_name">Apellidos</label>
+						<input type="text" placeholder="Apellidos" class="form-control" name="last_name" id="last_name" value="{{dataUser.last_name}}">
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="height_user">Estatura</label>
+						<input type="text" placeholder="Estatura" class="form-control" name="height_user" id="height_user" value="{{dataUser.height_user}}">
+					</div>
+					<div class="form-group col-md-6">
+					    <label for="date_nac">Fecha de Nacimiento</label>
+						<input type="date" placeholder="Fecha de nacimiento" class="form-control" name="date_nac" id="date_nac" value="{{dataUser.date_nac}}">
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="phone_number">Numero de celular</label>
+						<input type="number" placeholder="Numero de celular" class="form-control" name="phone_number" id="phone_number" value="{{dataUser.phone_number}}">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="email">Email</label>
+						<input type="email" placeholder="Email" class="form-control" name="email" id="email" value="{{dataUser.email}}">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<a href="./../../controllers/weight">
+						<label for="actual_weight">Peso Actual:</label>
+						<label for="actual_weight" style="color: #21a9af; font-weight: 100;">{{dataUser.actual_weight}} KG <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
+						{# <input type="text" placeholder="peso actual" class="form-control" name="actual_weight" id="actual_weight" value=""> #}
+					</a>
+				</div>
+				<div class="form-group">
+					<a href="./../../controllers/gender">
+						<label for="gender">Sexo:</label>
+						<label for="gender" style="color: #21a9af; font-weight: 100;">{{dataUser.gender}} <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
+						{# <input type="text" placeholder="Sexo" class="form-control" name="gender" id="gender" value="{{dataUser.gender}}"> #}
+					</a>
+				</div>
+				<div class="form-group">
+					<a href="./../../controllers/place">
+						<label for="exercise_space">Lugar de ejercicio:</label>
+						<label for="exercise_space" style="color: #21a9af; font-weight: 100;">{{dataUser.exercise_space}} <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
+						{# <input type="text" placeholder="Lugar de ejercicio" class="form-control" name="exercise_space" id="exercise_space" value="{{dataUser.exercise_space}}"> #}
+					</a>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Actualizar</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="messagehelp" class="hide">
+	Hola Soy un mensaje de ayuda de la vista profile
+</div>
+{% include "hook/footer.twig" %}
