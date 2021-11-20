@@ -12,4 +12,4 @@
  * @link      https://BodyOlimpus.com
  */
 require dirname (__FILE__).'/config/config.php';
-header("location: ./controllers/login");
+header("location: ./controllers/login.php");

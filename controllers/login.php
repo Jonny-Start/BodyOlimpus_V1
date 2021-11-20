@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
 
         if (!empty($dataUser) && password_verify($_POST['password'], $dataUser['passwd'])) {
             $_SESSION['user_id'] = $dataUser['id_user'];
-            header("Location: myaccount");
+            header("Location: myaccount.php");
         } else {
             $message = [
                 'type' => 'error',

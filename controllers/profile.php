@@ -5,7 +5,7 @@ require(__DIR__ . '/../classes/BodyOlimpusDataUser.php');
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login");
+    header("Location: login.php");
     die();
 } else {
     $id_user = $_SESSION['user_id'];
