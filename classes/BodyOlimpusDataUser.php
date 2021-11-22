@@ -3,7 +3,7 @@ class BodyOlimpusDataUser
 {
     public static function updateGender($gender, $id_user)
     {
-        require(__DIR__ . './db/DB.php');
+        require_once(__DIR__ . './db/DB.php');
         $sql = DB::DBconnect()->prepare("UPDATE bo_user SET gender = :gender WHERE bo_user.id_user = :id_user;");
         $sql->bindParam(':gender', $gender);
         $sql->bindParam(':id_user', $id_user);
@@ -17,7 +17,7 @@ class BodyOlimpusDataUser
 
     public static function updatePlace($place, $id_user)
     {
-        require(__DIR__ . './db/DB.php');
+        require_once(__DIR__ . './db/DB.php');
         $sql = DB::DBconnect()->prepare("UPDATE bo_user SET exercise_space = :place WHERE bo_user.id_user = :id_user;");
         $sql->bindParam(':place', $place);
         $sql->bindParam(':id_user', $id_user);
@@ -31,7 +31,7 @@ class BodyOlimpusDataUser
 
     public static function updateDataUserProfile($id_user, $first_name, $last_name, $height_user, $date_nac, $email, $phone_number, $last_update)
     {
-        require(__DIR__ . './db/DB.php');
+        require_once(__DIR__ . './db/DB.php');
         $sql = DB::DBconnect()->prepare("UPDATE bo_user SET first_name = :first_name, last_name = :last_name, height_user = :height_user, date_nac = :date_nac, email = :email, phone_number = :phone_number, last_update = :last_update WHERE bo_user.id_user = :id_user");
         $sql->bindParam(':id_user', $id_user);
         $sql->bindParam(':first_name', $first_name);
@@ -69,7 +69,7 @@ class BodyOlimpusDataUser
 
     public static function getDataUserProfile($id_user)
     {
-        require(__DIR__ . './db/DB.php');
+        require_once(__DIR__ . './db/DB.php');
         $sql = DB::DBconnect()->query("SELECT * FROM `bo_user` WHERE id_user = $id_user");
         // $sql->bindParam(':id_user', $id_user);
         $rows = $sql->fetchAll();
@@ -79,7 +79,7 @@ class BodyOlimpusDataUser
     public static function addWeight($weight, $id_user)
     {
         $date_weight = date("Y-m-d");
-        require(__DIR__ . './db/DB.php');
+        require_once(__DIR__ . './db/DB.php');
         $sql = DB::DBconnect()->query("INSERT INTO bo_weight (`id_weight`, `weight`, `id_user`, `date_weight`) VALUES (NULL, '$weight', '$id_user', '$date_weight')");
         $sqli = DB::DBconnect()->query("UPDATE bo_user SET actual_weight = '$weight' WHERE bo_user.id_user = '$id_user'");
         if (($sql->fetchAll()) > 0) {
@@ -91,6 +91,22 @@ class BodyOlimpusDataUser
             $message = "Error al actualizar el Peso";
         }
         return $message;
+    }
+
+    public static function getDataUserIMC($id_user)
+    {
+        require_once(__DIR__ . './db/DB.php');
+        $sql = DB::DBconnect()->query("SELECT actual_weight, height_user, gender FROM `bo_user` WHERE id_user = $id_user");
+        $rows = $sql->fetchAll();
+        return $rows[0];
+    }
+
+    public static function getDataUserChart($id_user)
+    {
+        require_once(__DIR__ . './db/DB.php');
+        $sql = DB::DBconnect()->query("SELECT weight as peso, date_weight as fecha FROM bo_weight WHERE id_user ='$id_user'");
+        $rows = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $rows;
     }
 
 }

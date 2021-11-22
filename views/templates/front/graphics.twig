@@ -3,37 +3,39 @@
 <div class="container">
     <div class="card">
         <h4 class="textHeader">
-            Gráficas        
+            Gráficas     
         </h4>
         <div id="tarjetDataHeader">
             <div class="tarjetData">
-                estas en: 
+                IMC:
                 <br/>
                 <span style="color:rgb(255, 99, 132)">
-                    Sobrepeso            
+                    {{ IMC }}
                 </span>
             </div>
             <div class="tarjetData">
-                estas en: 
+                estas en:
                 <br/>
                 <span style="color:rgb(255, 99, 132)">
-                    Sobrepeso            
+                    {{ IMCtext }}
                 </span>
             </div>
         </div>
         <canvas id="LineData"></canvas>
-		<canvas id="BarData"></canvas>
+        <canvas id="BarData"></canvas>
     </div>
 </div>
 
+{% include "hook/footer.twig" %}
+
 <script>
 const data = {
-	labels: ['January','February','March','April','May','June'],
+	labels: [{% autoescape %}{{ dateFormat|raw }}{% endautoescape %}],
 	datasets: [{
 		label: 'Peso',
 		backgroundColor: 'rgba(255, 99, 132,0.5)',
 		borderColor: 'rgba(255, 99, 132,0.5)',
-		data: [0, 10, 5, 2, 20, 30, 45],
+		data: [{{ weightFormat }}],
 		fill: true,
 	}]
 };
@@ -51,12 +53,13 @@ const LineData = new Chart(
 
 //Bar
 const data2 = {
-	labels: ['January','February','March','April','May','June'],
+	labels: [{% autoescape %}{{ dateFormat|raw }}{% endautoescape %}],
 	datasets: [{
 		label: 'Peso',
 		backgroundColor: 'rgba(255, 99, 132,0.5)',
 		borderColor: 'rgba(255, 99, 132,0.5)',
-		data: [0, 10, 5, 2, 20, 30, 45],
+		data: [{{ weightFormat }}],
+		fill: true,
 	}]
 };
 
@@ -72,4 +75,3 @@ const BarData = new Chart(
 );
 
 </script>
-</div></div>{% include "hook/footer.twig" %}

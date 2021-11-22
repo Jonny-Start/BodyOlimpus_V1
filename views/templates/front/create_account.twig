@@ -17,16 +17,38 @@
                     </a>
                     <input type="text" name="first_name" required placeholder="Nombre"> 
                     <input type="text" name="last_name" required placeholder="Apellidos"> 
-                    <input type="text" name="email" required placeholder="Correo electrónico"> 
+                    <span style="display: none;" id="VerifyEmail"></span>
+                    <input type="text" name="email" id="email" required placeholder="Correo electrónico"> 
                     {# <p class="text-create-account">Tu contraseña debe tener mínimo 10 caracteres</p> #}
-                    <input type="password" required  name="passwd" placeholder="Contraseña"> 
-                    <input type="password" required  name="verify_passwd" placeholder="Verifica Contraseña"> 
+                    {# <input type="password" required  name="passwd" placeholder="Contraseña"> 
+                    <input type="password" required  name="verify_passwd" placeholder="Verifica Contraseña">  #}
                     <div class="container-button">
-                         <input type="submit" name="" value="Ingresar">
-                     </div>
+                         <input type="submit" name="createAcount" id="createAcount"  value="Crear cuenta">
+                    </div>
                 </form>
             </div>
 		</div>
     </div>
 </div>
+<script>
+    document.getElementById('email').addEventListener('focus', function() {
+        document.getElementById('email').addEventListener('input', function() {
+            campo = event.target;
+            valido = document.getElementById('VerifyEmail');
+            valido.style.display = 'block';
+            emailRegex = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
+            if (emailRegex.test(campo.value)) {
+                valido.style.color = 'green';
+                valido.innerText = "Es válido";
+            } else {
+                valido.style.color = 'red';
+                valido.innerText = "Aún no cumple con los caracteres de un correo electrónico";
+            }
+        });
+    });
+    document.getElementById('email').addEventListener('blur', function() {
+        valido = document.getElementById('VerifyEmail');
+        valido.style.display = 'none';
+    });
+</script>
 {% include "hook/footer.twig" %}
