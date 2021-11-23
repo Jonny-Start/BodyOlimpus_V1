@@ -109,4 +109,29 @@ class BodyOlimpusDataUser
         return $rows;
     }
 
+    public static function getPass($id_user)
+    {
+        require_once(__DIR__ . './db/DB.php');
+        $sql = DB::DBconnect()->prepare("SELECT passwd FROM bo_user where id_user = :id_user");
+        $sql->bindParam(':id_user', $id_user);
+        $sql->execute();
+        $dataUser = $sql->fetch(PDO::FETCH_ASSOC);
+        return $dataUser;
+    }
+
+    public static function resetPassword($id_user, $password)
+    {
+        require_once(__DIR__ . './db/DB.php');
+        $sql = DB::DBconnect()->prepare("UPDATE bo_user SET passwd = :passwd WHERE bo_user.id_user = :id_user;");
+        $password = password_hash($password, PASSWORD_BCRYPT);
+        $sql->bindParam(':passwd', $password);
+        $sql->bindParam(':id_user', $id_user);
+        if ($sql->execute()) {
+            $message = "Contraseña actualizada";
+        } else {
+            $message = "Error al actualizar la contraseña";
+        }
+        return $message;
+    }
+
 }

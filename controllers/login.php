@@ -5,29 +5,38 @@ require(__DIR__ . '/../classes/BodyOlimpusLogin.php');
 
 
 if (!isset($_SESSION['user_id'])) {
-    if (!empty($_POST['email']) && !empty($_POST['password'])) {
-        $email = $_POST['email']; // traigo los datos que envie en el post si existen
-        $pass = $_POST['password']; // traigo los datos que envie en el post si existen
+    if (!empty($_POST['submit'])) {
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
+            $email = $_POST['email']; // traigo los datos que envie en el post si existen
+            $pass = $_POST['password']; // traigo los datos que envie en el post si existen
 
-        $dataUser = BodyOlimpusLogin::getLoging($email, $pass); // consulto en BD los dato que recojo
+            $dataUser = BodyOlimpusLogin::getLoging($email, $pass); // consulto en BD los dato que recojo
 
-        if (!empty($dataUser) && password_verify($_POST['password'], $dataUser['passwd'])) {
-            $_SESSION['user_id'] = $dataUser['id_user'];
-            header("Location: myaccount.php");
+            if (!empty($dataUser) && password_verify($_POST['password'], $dataUser['passwd'])) {
+                $_SESSION['user_id'] = $dataUser['id_user'];
+                header("Location: myaccount.php");
+            } else {
+                $message = [
+                    'type' => 'error',
+                    'text' => 'Error, los datos ingresados no son correctos o no existen'
+                ];
+                $nameView = 'bo_login';
+                echo $twig->render('login.twig', compact('nameView', 'message'));
+            }
         } else {
             $message = [
                 'type' => 'error',
-                'text' => 'Error, los datos ingresados no son correctos o no existen'
+                'text' => 'Error, se tiene que llenar todos los campos'
             ];
-            $nameView = 'bo_login'; 
+            $nameView = 'bo_login';
             echo $twig->render('login.twig', compact('nameView', 'message'));
         }
     } else {
-        $nameView = 'bo_login'; 
+        $nameView = 'bo_login';
         echo $twig->render('login.twig', compact('nameView'));
     }
 } else {
-    $nameView = 'bo_myaccount'; 
+    $nameView = 'bo_myaccount';
     echo $twig->render('myaccount.twig', compact('nameView'));
 }
 

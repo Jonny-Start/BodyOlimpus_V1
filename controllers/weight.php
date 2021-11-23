@@ -8,22 +8,31 @@ if (!isset($_SESSION['user_id'])) {
     die();
 } else {
     if (!empty($_POST['submitWeight'])) {
-        $weight = $_POST['weight'];
-        $id_user = $_SESSION['user_id'];
+        if (!empty($_POST['weight'])) {
+            $weight = $_POST['weight'];
+            $id_user = $_SESSION['user_id'];
 
-        $dataUser = BodyOlimpusDataUser::addWeight($weight, $id_user);
-        if ($dataUser == "Peso actualizado y registrado en tu perfil") {
-            $nameView = 'bo_weight';
-            $message = [
-                'type' => 'success',
-                'text' => $dataUser
-            ];
-            echo $twig->render('weight.twig', compact('nameView', 'message'));
+            $dataUser = BodyOlimpusDataUser::addWeight($weight, $id_user);
+            if ($dataUser == "Peso actualizado y registrado en tu perfil") {
+                $nameView = 'bo_weight';
+                $message = [
+                    'type' => 'success',
+                    'text' => $dataUser
+                ];
+                echo $twig->render('weight.twig', compact('nameView', 'message'));
+            } else {
+                $nameView = 'bo_weight';
+                $message = [
+                    'type' => 'error',
+                    'text' => $dataUser
+                ];
+                echo $twig->render('weight.twig', compact('nameView', 'message'));
+            }
         } else {
             $nameView = 'bo_weight';
             $message = [
                 'type' => 'error',
-                'text' => $dataUser
+                'text' => 'Error, el campo tiene que estar diligenciado'
             ];
             echo $twig->render('weight.twig', compact('nameView', 'message'));
         }

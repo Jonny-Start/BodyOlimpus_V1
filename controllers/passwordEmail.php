@@ -6,7 +6,6 @@ session_start();
 
 if (!empty($_POST['submitPassEmail'])) {
     if (!empty($_POST['email'])) {
-
         $email = $_POST['email']; //Para quien va el correo email
         $dataUser = BodyOlimpusEmail::existsEmail($email);
         if (!empty($dataUser['id_user'])) {
