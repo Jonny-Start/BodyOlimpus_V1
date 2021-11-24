@@ -73,7 +73,7 @@ class BodyOlimpusDataUser
         $sql = DB::DBconnect()->query("SELECT * FROM `bo_user` WHERE id_user = $id_user");
         // $sql->bindParam(':id_user', $id_user);
         $rows = $sql->fetchAll();
-        return $rows[0];
+        return $rows;
     }
 
     public static function addWeight($weight, $id_user)
@@ -98,7 +98,12 @@ class BodyOlimpusDataUser
         require_once(__DIR__ . './db/DB.php');
         $sql = DB::DBconnect()->query("SELECT actual_weight, height_user, gender FROM `bo_user` WHERE id_user = $id_user");
         $rows = $sql->fetchAll();
-        return $rows[0];
+        if(!empty($rows)){ 
+            $rows = $rows[0];
+        }else{
+            $rows = '';
+        }
+        return $rows;
     }
 
     public static function getDataUserChart($id_user)

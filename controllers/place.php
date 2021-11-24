@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
         $id_user = $_SESSION['user_id'];
 
         $dataUser = BodyOlimpusDataUser::updatePlace($place, $id_user);
-        if ($dataUser == "place actualizado") {
+        if ($dataUser == "Espacio de ejercicio actualizado") {
             $nameView = 'bo_place';
             $message = [
                 'type' => 'success',
