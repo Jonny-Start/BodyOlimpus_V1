@@ -11,6 +11,10 @@ if (!isset($_SESSION['user_id'])) {
     $id_user = $_SESSION['user_id'];
     $dataUser = BodyOlimpusDataUser::getDataUserProfile($id_user);
 
+    if (!empty($dataUser)) {
+        $dataUser = $dataUser[0];
+    }
+
     $fecha_nacimiento = new DateTime($dataUser['date_nac']);
     $hoy = new DateTime();
     $edad = $hoy->diff($fecha_nacimiento);

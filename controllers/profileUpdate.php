@@ -54,6 +54,9 @@ if (!isset($_SESSION['user_id'])) {
         } else {
             $id_user = $_SESSION['user_id'];
             $dataUser = BodyOlimpusDataUser::getDataUserProfile($id_user);
+            if (!empty($dataUser)) {
+                $dataUser = $dataUser[0];
+            }
             $nameView = 'bo_profileUpdate';
             $message = [
                 'type' => 'error',
@@ -64,6 +67,9 @@ if (!isset($_SESSION['user_id'])) {
     } else {
         $id_user = $_SESSION['user_id'];
         $dataUser = BodyOlimpusDataUser::getDataUserProfile($id_user);
+        if (!empty($dataUser)) {
+            $dataUser = $dataUser[0];
+        }
         $nameView = 'bo_profileUpdate';
         echo $twig->render('profileUpdate.twig', compact('nameView', 'dataUser'));
     }
