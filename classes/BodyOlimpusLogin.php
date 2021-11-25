@@ -3,7 +3,7 @@ class BodyOlimpusLogin
 {
     public static function getLoging($email, $pass)
     {
-        require_once(__DIR__ . './db/DB.php');
+        require_once(__DIR__ . '/db/DB.php');
         $sql = DB::DBconnect()->prepare("SELECT id_user, email, passwd FROM bo_user where email = :email");
         $sql->bindParam(':email', $email);
         $sql->execute();
@@ -13,7 +13,7 @@ class BodyOlimpusLogin
 
     public static function setUser($first_name, $last_name, $email, $pass)
     {
-        require_once(__DIR__ . './db/DB.php');
+        require_once(__DIR__ . '/db/DB.php');
         
         $createAccount_date = date("Y-m-d");
 
