@@ -6,6 +6,8 @@ if ("serviceWorker" in navigator) {
         console.log("Registrations Failed!");
         console.log(error);
     });
+} else {
+    console.log("PWA Failed!");
 }
 
 function goBack() {

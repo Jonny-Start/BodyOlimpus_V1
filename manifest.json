@@ -1,18 +1,19 @@
 {
-    "name": "BodyOlimpus",
     "short_name": "BodyOlimpus",
+    "name": "BodyOlimpus",
     "start_url": ".",
-    "background_color": "#6dcdb1",
-    "theme_color": "#009578",
+    "background_color": "#000000",
+    "theme_color": "#676666",
     "display": "standalone",
     "icons": [{
-            "src": "views/img/logo1.png",
-            "sizes": "192x192",
-            "type": "image/png"
+            "src": "./views/img/LogoBodyOlimpus_Black_Cuadrado.png",
+            "sizes": "4168x4168",
+            "type": "image/png",
+            "purpose": "any maskable"
         },
         {
-            "src": "views/img/logo2.png",
-            "sizes": "192x192",
+            "src": "./views/img/Logo_Black_Cuadrado.png",
+            "sizes": "4168x4168",
             "type": "image/png"
         }
     ]
