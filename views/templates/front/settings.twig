@@ -1,30 +1,42 @@
 {% include "hook/head.twig" %}
 <div class="container">
-	<div class="card">
-		<div id="form-settings">
-			<h4 class="textHeader"> PERFIL</h4>
-				<div id="container-settings" class="">
-        				<a href="./../../controllers/profile.php">
-            				<div id="perfil" class="content-settings">
-               					 <img src="././../views/img/curriculum.png">
-								 <span>Perfil</span>
-            				</div>
-       					 </a>
-        				<a href="./../../controllers/changePassword.php">
-            				<div id="ajustes" class="content-settings">
-               					<img src="././../views/img/pass.png"><span>Cambiar contraseña</span>
-            				</div>
-       					</a>
-						<a href="./../../controllers/logout.php">
-            				<div id="cerrarSesion" class="content-settings">
-                				<img src="././../views/img/cerrar.png"><span>Cerrar sesión</span>
-            				</div>
-        				</a>
-    			</div>
-		</div>
-	</div>
+    <div class="card">
+        <div id="form-settings">
+            <h4 class="textHeader">
+                PERFIL
+                            
+            </h4>
+            <div id="container-settings" class="">
+                {# <a href="./../../controllers/profile.php">
+                    <div id="perfil" class="content-settings">
+                        <img src="././../views/img/curriculum.png" />
+                        <span>Perfil</span>
+                    </div>
+                </a> #}
+                <a href="./../../controllers/changePassword.php">
+                    <div id="ajustes" class="content-settings">
+                        {# <img src="././../views/img/pass.png" /> #}
+                        <i class="fa-solid fa-key"></i>
+                        <span>
+                            Cambiar contraseña
+                        </span>
+                    </div>
+                </a>
+                <a href="./../../controllers/logout.php">
+                    <div id="cerrarSesion" class="content-settings">
+                        {# <img src="././../views/img/cerrar.png" /> #}
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>
+                            Cerrar sesión
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="messagehelp" class="hide">
-	Visualiza tu información, cambia tus datos, o cierra sesión en la App!
+    Visualiza tu información, cambia tus datos, o cierra sesión en la App!
+    
 </div>
 {% include "hook/footer.twig" %}
