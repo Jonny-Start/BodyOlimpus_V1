@@ -1,37 +1,67 @@
 <footer>
-    <div style="height: 12em;overflow: hidden;position: fixed;width: 100%;bottom: 0;left: 0;">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-            <path d="M0.82,98.20 C220.02,107.08 276.68,106.09 503.28,100.17 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #1c1d1e;">
-                <div id="bo_inner_footer">
-                    <div id="menu-footer">
-                        <div class="column" tabindex="0">
-                            <a onclick="goBack()">
-                                <i class="fa-solid fa-angle-left"></i>
-                            </a>
-                        </div>
-                        <div class="column" tabindex="0">
-                            <a href="./../../controllers/profile.php">
-                                <i class="fa-solid fa-user"></i>
-                            </a>
-                        </div>
-                        <div class="column" tabindex="0">
-                            <a href="./../../controllers/myaccount.php">
-                                <i class="fa-solid fa-house"></i>
-                            </a>
-                        </div>
-                        <div class="column" tabindex="0">
-                            <a href="./../../controllers/settings.php">
-                                <i class="fa-solid fa-gear"></i>
-                            </a>
-                        </div>
-                        <div class="column" tabindex="0">
-                            <a onclick="helpMessage()">
-                                <i class="fa-regular fa-circle-question"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </path>
-        </svg>
+    <div class="navigation colorFooter">
+        <ul>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-angle-left colorText"></i>
+                    </span>
+                    <span class="text">
+                        Home
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-user colorText"></i>
+                    </span>
+                    <span class="text">
+                        Profile
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-house colorText"></i>
+                    </span>
+                    <span class="text">
+                        Message
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-gear colorText"></i>
+                    </span>
+                    <span class="text">
+                        Photos
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-regular fa-circle-question colorText"></i>
+                    </span>
+                    <span class="text">
+                        Settings
+                    </span>
+                </a>
+            </li>
+            <div class="indicator borderColorBody" style=""></div>
+        </ul>
     </div>
+    <script type="text/javascript">
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+        list.forEach((item)=>
+        item.classList.remove('active'));
+        this.classList.add('active');
+    }
+    list.forEach((item)=>
+    item.addEventListener('click', activeLink));
+    </script>
 </footer></body><script src="./../../views/js/fontawesome.js"></script><script src="./../../views/js/jquery-3.6.0.js"></script><script src="./../../views/js/script.js"></script></html>
