@@ -1,67 +1,57 @@
 <footer>
     <div class="navigation colorFooter">
         <ul>
-            <li class="list active">
-                <a href="#">
+            <li class="list" id="footerBack">
+                <a onclick="goBack()">
                     <span class="icon">
-                        <i class="fa-solid fa-angle-left colorText"></i>
+                        <i class="fa-solid fa-angle-left colorText colorFooter" style="min-width: 3em;"></i>
                     </span>
-                    <span class="text">
-                        Home
+                    <span class="text colorText">
+                        Atras
                     </span>
                 </a>
             </li>
-            <li class="list">
-                <a href="#">
+            <li class="list" id="footerProfile">
+                <a href="./../../controllers/profile.php">
                     <span class="icon">
-                        <i class="fa-solid fa-user colorText"></i>
+                        <i class="fa-solid fa-user colorText colorFooter"></i>
                     </span>
-                    <span class="text">
-                        Profile
+                    <span class="text colorText">
+                        Perfil
                     </span>
                 </a>
             </li>
-            <li class="list">
-                <a href="#">
+            <li class="list" id="footerHome">
+                <a href="./../../controllers/myaccount.php">
                     <span class="icon">
-                        <i class="fa-solid fa-house colorText"></i>
+                        <i class="fa-solid fa-house colorText colorFooter"></i>
                     </span>
-                    <span class="text">
-                        Message
+                    <span class="text colorText">
+                        Menu
                     </span>
                 </a>
             </li>
-            <li class="list">
-                <a href="#">
+            <li class="list" id="footerSettings">
+                <a href="./../../controllers/settings.php">
                     <span class="icon">
-                        <i class="fa-solid fa-gear colorText"></i>
+                        <i class="fa-solid fa-gear colorText colorFooter"></i>
                     </span>
-                    <span class="text">
-                        Photos
+                    <span class="text colorText">
+                        Ajustes
                     </span>
                 </a>
             </li>
-            <li class="list">
-                <a href="#">
+            <li class="list" id="footerHelp">
+                <a onclick="helpMessage()">
                     <span class="icon">
-                        <i class="fa-regular fa-circle-question colorText"></i>
+                        <i class="fa-regular fa-circle-question colorText colorFooter"></i>
                     </span>
-                    <span class="text">
-                        Settings
+                    <span class="text colorText">
+                        Ayuda
                     </span>
                 </a>
             </li>
-            <div class="indicator borderColorBody" style=""></div>
+            {# <div class="indicator borderColorBody" style=""></div> #}
         </ul>
     </div>
-    <script type="text/javascript">
-    const list = document.querySelectorAll('.list');
-    function activeLink(){
-        list.forEach((item)=>
-        item.classList.remove('active'));
-        this.classList.add('active');
-    }
-    list.forEach((item)=>
-    item.addEventListener('click', activeLink));
-    </script>
 </footer></body><script src="./../../views/js/fontawesome.js"></script><script src="./../../views/js/jquery-3.6.0.js"></script><script src="./../../views/js/script.js"></script></html>
