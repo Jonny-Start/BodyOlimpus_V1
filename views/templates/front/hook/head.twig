@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="./../../views/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./../../views/css/BodyOlimpus.css?version=0.0.1">
-        <link rel="stylesheet" href="./../../views/css/fontawesome.all.css">
-        <link rel="shortcut icon" href="././../views/img/Logo_Transparent.png">
-        {# pwa #}
-        <meta name="theme-color" content="#676666">
-        <link rel="manifest" dataType='json' href="./../../manifest.json">
-        <link rel="apple-touch-icon" href="././../views/img/LogoBodyOlimpus_Black_Cuadrado.png">
-        <script src="./../../views/js/script.js"></script>
-        {# end pwa #}
-        <script src="https://kit.fontawesome.com/572f592c32.js" crossorigin="anonymous"></script>
-        <title>
-            BodyOlimpus
-        </title>
-    </head>
-    <body id='{{ nameView }}' class='dark'>
-        <header>
-            <div style="height: 12em; overflow: hidden; position: fixed; width: 100%; top: 0; left: 0;" id="bo_header">
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                    <path d="M0.00,49.98 C250.27,80.44 266.64,81.42 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #1c1d1e;" class="colorHeader"></path>
-                </svg>
-            </div>
-        </header>
-        <div id="bo_NotificationsJS" class="">
-            <h5 id="NotificationsJS"></h5>
-        </div>
-        {% if message %}
-            <div id="bo_Notifications" class="{{ message.type }}">
-                <h5>
-                    {{ message.text }}
-                </h5>
-            </div>
-        {% endif %}
-    </body>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="./../../views/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./../../views/css/BodyOlimpus.css?version=0.0.1">
+		<link rel="stylesheet" href="./../../views/css/fontawesome.all.css">
+		<link
+		rel="shortcut icon" href="././../views/img/Logo_Transparent.png">
+		{# pwa #}
+		<meta name="theme-color" content="#676666">
+		<link rel="manifest" datatype='json' href="./../../manifest.json">
+		<link rel="apple-touch-icon" href="././../views/img/LogoBodyOlimpus_Black_Cuadrado.png">
+		<script src="./../../views/js/script.js"></script>
+		{# end pwa #}
+		<script src="https://kit.fontawesome.com/572f592c32.js" crossorigin="anonymous"></script>
+		<title>
+			BodyOlimpus
+		</title>
+	</head>
+	<body id='{{ nameView }}' class='dark'>
+		<header>
+			<div style="height: 12em; overflow: hidden; position: fixed; width: 100%; top: 0; left: 0;" id="bo_header">
+				<svg viewbox="0 0 500 150" preserveaspectratio="none" style="height: 100%; width: 100%;">
+					<path d="M0.00,49.98 C250.27,80.44 266.64,81.42 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #1c1d1e;" class="colorHeader"></path>
+				</svg>
+			</div>
+		</header>
+		<div id="bo_NotificationsJS" class="">
+			<h5 id="NotificationsJS"></h5>
+		</div>
+		{% if message %}
+			<div id="bo_Notifications" class="{{ message.type }}">
+				<h5>
+					{{ message.text }}
+				</h5>
+			</div>
+		{% endif %}
+	</body>
 </html>

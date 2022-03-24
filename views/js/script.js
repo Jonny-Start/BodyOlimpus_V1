@@ -48,14 +48,17 @@ function goBack() {
 function helpMessage() {
     const messagehelp = document.querySelector('#messagehelp');
     const btnHelp = document.getElementById('footerHelp');
+    const opacityNotification = document.getElementById('opacityNotification');
     if (messagehelp) {
         if (messagehelp.className.match(/(?:^|\s)hide(?!\S)/)) {
             messagehelp.className = "";
+            opacityNotification.classList.remove('hide');
             footerActive();
             btnHelp.classList.add('active');
         } else {
             messagehelp.className = messagehelp.className += "hide";
             btnHelp.classList.remove('active');
+            opacityNotification.classList.add('hide');
             bodyActive();
         }
     }
