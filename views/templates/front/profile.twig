@@ -1,72 +1,72 @@
 {% include "hook/head.twig" %}
-<h4 class="textHeader">
+<h4 class="textHeader colorText">
     PERFIL
 </h4>
 
 <div id="container">
     <div class="card">
-        <div id="tarjetHead">
+        <div id="tarjetHead" class="colorContainers">
             <img src="././../views/img/cilueta.png" alt="Banner de silueta" />
         </div>
         <div id="section">
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Nombres:
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.first_name }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Apellidos:
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.last_name }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Estatura:
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.height_user }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Edad:		
-                <span>
+                <span class="colorTextHighlight">
                     {{ old }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Peso actual:             
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.actual_weight }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Sexo:                 
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.gender }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Lugar:                  
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.exercise_space }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Celular:                    
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.phone_number }}
                 </span>
             </div>
-            <div class="DataUser">
+            <div class="DataUser colorText">
                 Correo:           
-                <span>
+                <span class="colorTextHighlight">
                     {{ dataUser.email }}
                 </span>
             </div>
         </div>
         <br/>
         <a href="./../../controllers/profileUpdate.php">
-            <button type="submit" id="submitProfile" class="btn btn-primary">
+            <button type="submit" id="submitProfile" class="colorTextHighlight">
                 Ir a actualizar
             </button>
         </a>

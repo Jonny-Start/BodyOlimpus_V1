@@ -1,38 +1,31 @@
 {% include "hook/head.twig" %}
 <div class="container">
-    <div class="card">
-        <h4 class="textHeader">
-            Plan de Alimentacion
-                    
-        </h4>
-        <form action="./../../controllers/feeding.php" method="post">
-            <img src="././../views/img/comer.png" alt="comer" />
-            <div id="tarjetas">
-                <a class=" links" href="./../../controllers/food1.php">
-                    <div class="elementos" id="card1">
-                        <div class="content_img">
-                            <img src="././../views/img/comer.png" alt="comer" />
-                        </div>
-                        <div class="content_text">
-                            <h5>
-                                Come saludable
-                                                            
-                            </h5>
-                            <p>
-                                Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor                       
-                                                                                            
-                                                            
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </form>
-    </div>
+	<div class="card">
+		<h4 class="textHeader colorText">
+			Plan de Alimentacion
+		</h4>
+		<form action="./../../controllers/feeding.php" method="post">
+			<img id="HeaderImg" src="././../views/img/comer.png" alt="comer"/>
+			<div class="contentArticle">
+				<div class="contentImg">
+					<img src="././../views/img/img1.jpg" alt="">
+				</div>
+				<div class="contentText">
+					<span>
+						<p class="Title">Title</p>
+						<p class="Date">Date</p>
+					</span>
+					<p class="Text">
+						In sit laborum veniam eiusmod anim. Id ipsum reprehenderit id ea aute.
+					</p>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 <div id="messagehelp" class="hide">
-    Come todos los días saludable y verás los resultados en poco tiempo!
-        Repite estas recetas las veces que puedas.
-    
+	Come todos los días saludable y verás los resultados en poco tiempo!
+			        Repite estas recetas las veces que puedas.
+
 </div>
 {% include "hook/footer.twig" %}

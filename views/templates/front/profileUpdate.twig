@@ -1,9 +1,9 @@
 {% include "hook/head.twig" %}
-<h4 class="textHeader">PERFIL (Actualizaci&oacute;n de datos)</h4>
+<h4 class="textHeader colorText">PERFIL (Actualizaci&oacute;n de datos)</h4>
 
 <div id="container">
 	<div class="card">
-		<div id="tarjetHead">
+		<div id="tarjetHead" class="colorContainers">
 			<img src="././../views/img/cilueta.png" alt="Banner de silueta"/>
 		</div>
 		<form action="./../../controllers/profileUpdate.php" method="post">
@@ -11,60 +11,60 @@
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="first_name">Nombres</label>
+						<label class="colorTextHighlight" for="first_name">Nombres</label>
 						<input type="text" placeholder="Nombres" class="form-control" name="first_name" id="first_name" value="{{dataUser.first_name}}" required>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="last_name">Apellidos</label>
+						<label class="colorTextHighlight" for="last_name">Apellidos</label>
 						<input type="text" placeholder="Apellidos" class="form-control" name="last_name" id="last_name" value="{{dataUser.last_name}}" required>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="height_user">Estatura (M)</label>
+						<label class="colorTextHighlight" for="height_user">Estatura (M)</label>
 						<input type="text" placeholder="Estatura en metros" class="form-control" name="height_user" id="height_user" value="{{dataUser.height_user}}" required>
 					</div>
 					<div class="form-group col-md-6">
-					    <label for="date_nac">Fecha de Nacimiento</label>
+					    <label class="colorTextHighlight" for="date_nac">Fecha de Nacimiento</label>
 						<input type="date" placeholder="Fecha de nacimiento" class="form-control" name="date_nac" id="date_nac" value="{{dataUser.date_nac}}" required>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="phone_number">Numero de celular</label>
+						<label class="colorTextHighlight" for="phone_number">Numero de celular</label>
 						<input type="number" placeholder="Numero de celular" class="form-control" name="phone_number" id="phone_number" value="{{dataUser.phone_number}}" required>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="email">Email</label>
+						<label class="colorTextHighlight" for="email">Email</label>
 						<input type="email" placeholder="Email" class="form-control" name="email" id="email" value="{{dataUser.email}}" required>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<a href="./../../controllers/weight.php">
-						<label for="actual_weight">Peso Actual:</label>
-						<label for="actual_weight" style="color: #21a9af; font-weight: 100;">{{dataUser.actual_weight}} KG <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
+						<label class="colorTextHighlight" for="actual_weight">Peso Actual:</label>
+						<label class="colorText" for="actual_weight" style="font-weight: 100;">{{dataUser.actual_weight}} KG <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
 						{# <input type="text" placeholder="peso actual" class="form-control" name="actual_weight" id="actual_weight" value=""> #}
 					</a>
 				</div>
 				<div class="form-group">
 					<a href="./../../controllers/gender.php">
-						<label for="gender">Sexo:</label>
-						<label for="gender" style="color: #21a9af; font-weight: 100;">{{dataUser.gender}} <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
+						<label class="colorTextHighlight" for="gender">Sexo:</label>
+						<label class="colorText" for="gender" style=" font-weight: 100;">{{dataUser.gender}} <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
 						{# <input type="text" placeholder="Sexo" class="form-control" name="gender" id="gender" value="{{dataUser.gender}}"> #}
 					</a>
 				</div>
 				<div class="form-group">
 					<a href="./../../controllers/place.php">
-						<label for="exercise_space">Lugar de ejercicio:</label>
-						<label for="exercise_space" style="color: #21a9af; font-weight: 100;">{{dataUser.exercise_space}} <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
+						<label class="colorTextHighlight" for="exercise_space">Lugar de ejercicio:</label>
+						<label class="colorText" for="exercise_space" style="font-weight: 100;">{{dataUser.exercise_space}} <i class="fas fa-external-link-alt" style="color: #7e7a7a;"></i></label>
 						{# <input type="text" placeholder="Lugar de ejercicio" class="form-control" name="exercise_space" id="exercise_space" value="{{dataUser.exercise_space}}"> #}
 					</a>
 				</div>
 
-				<button type="submit" name="profileUpdateSubmit" id="profileUpdateSubmit" value="profileUpdateSubmit" class="btn btn-primary">Actualizar</button>
+				<button type="submit" name="profileUpdateSubmit" id="profileUpdateSubmit" value="profileUpdateSubmit" class="colorTextHighlight">Actualizar</button>
 			</form>
 		</div>
 	</div>

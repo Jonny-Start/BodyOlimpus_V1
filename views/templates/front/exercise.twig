@@ -1,20 +1,25 @@
 {% include "hook/head.twig" %}
 <div class="container">
     <div class="card">
-        <h4 class="textHeader">
+        <h4 class="textHeader colorText">
             Plan de Ejercicios
         </h4>
         <form action="./../../controllers/exercise.php" method="post">
-            <img src="././../views/img/triangulo.png" alt="medir peso" />
-            <div id="tarjetas">
-                <a class=" links" href="./../../controllers/exercises1.php">
-                    <div class="elementos" id="card1">
-                        <p>
-                            Rutina #1 Principiantes
-                        </p>
-                    </div>
-                </a>
-            </div>
+            <img id="HeaderImg" src="././../views/img/triangulo.png" alt="medir peso" />
+            <div class="contentArticle">
+				<div class="contentImg">
+					<img src="././../views/img/img1.jpg" alt="">
+				</div>
+				<div class="contentText">
+					
+						<p class="Title">Title</p>
+						<p class="Date">Date</p>
+			
+					<p class="Text">
+						In sit laborum veniam eiusmod anim. Id ipsum reprehenderit id ea aute.
+					</p>
+				</div>
+			</div>
         </form>
     </div>
 </div>
