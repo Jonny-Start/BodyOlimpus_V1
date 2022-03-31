@@ -51,12 +51,12 @@ function helpMessage() {
     const opacityNotification = document.getElementById('opacityNotification');
     if (messagehelp) {
         if (messagehelp.className.match(/(?:^|\s)hide(?!\S)/)) {
-            messagehelp.className = "";
+            messagehelp.classList.remove('hide');
             opacityNotification.classList.remove('hide');
             footerActive();
             btnHelp.classList.add('active');
         } else {
-            messagehelp.className = messagehelp.className += "hide";
+            messagehelp.classList.add('hide');
             btnHelp.classList.remove('active');
             opacityNotification.classList.add('hide');
             bodyActive();
@@ -67,4 +67,45 @@ function helpMessage() {
 
 document.addEventListener("DOMContentLoaded", () => {
     bodyActive();
+
+    // Theme color
+    function changeThemeColor(colorTheme) {
+        var bo_body = document.body;
+        console.log(bo_body);
+        if (colorTheme == 1) {
+            bo_body.classList.add('dark');
+        } else {
+            bo_body.classList.add('light');
+        }
+    }
+
+    var colorTheme = localStorage.getItem('colorTheme');
+    if (colorTheme) {
+        changeThemeColor(colorTheme);
+    } else {
+        var bo_body = document.body;
+        bo_body.classList.add('light');
+    }
+
+    var checkTheme = document.getElementById('switchColorInput');
+    if (checkTheme) {
+        var colorTheme = localStorage.getItem('colorTheme');
+        if (colorTheme == 1) {
+            checkTheme.checked = true;
+        } else {
+            checkTheme.checked = false;
+        }
+        checkTheme.addEventListener('click', () => {
+            let light = 0;
+            let dark = 1;
+            if (colorTheme == light) {
+                localStorage.setItem('colorTheme', dark);
+                location.reload();
+            } else {
+                localStorage.setItem('colorTheme', light);
+                location.reload();
+            }
+        });
+    }
+
 });

@@ -21,14 +21,8 @@
 			BodyOlimpus
 		</title>
 	</head>
-	<body id='{{ nameView }}' class='dark'>
-		<header>
-			<div style="height: 12em; overflow: hidden; position: fixed; width: 100%; top: 0; left: 0;" id="bo_header">
-				<svg viewbox="0 0 500 150" preserveaspectratio="none" style="height: 100%; width: 100%;">
-					<path d="M0.00,49.98 C250.27,80.44 266.64,81.42 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #1c1d1e;" class="colorHeader"></path>
-				</svg>
-			</div>
-		</header>
+	<body id='{{ nameView }}' class=''>
+		<header id="bo_header" class="colorHeader"></header>
 		<div id="bo_NotificationsJS" class="">
 			<h5 id="NotificationsJS"></h5>
 		</div>
@@ -39,5 +33,4 @@
 				</h5>
 			</div>
 		{% endif %}
-	</body>
-</html>
+

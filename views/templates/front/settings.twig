@@ -1,42 +1,45 @@
 {% include "hook/head.twig" %}
-<div class="container">
-    <div class="card">
-        <div id="form-settings">
-            <h4 class="textHeader colorText">
-                PERFIL
-                            
-            </h4>
-            <div id="container-settings" class="">
-                {# <a href="./../../controllers/profile.php">
-                    <div id="perfil" class="content-settings">
-                        <img src="././../views/img/curriculum.png" />
-                        <span>Perfil</span>
-                    </div>
-                </a> #}
-                <a href="./../../controllers/changePassword.php">
-                    <div id="ajustes" class="content-settings colorContainers">
-                        {# <img src="././../views/img/pass.png" /> #}
-                        <i class="fa-solid fa-key colorText"></i> <br/>
-                        <span class="colorText">
-                            Cambiar contraseña
-                        </span>
-                    </div>
-                </a>
-                <a href="./../../controllers/logout.php">
-                    <div id="cerrarSesion" class="content-settings colorContainers">
-                        {# <img src="././../views/img/cerrar.png" /> #}
-                        <i class="fa-solid fa-right-from-bracket colorText"></i>  <br/>
-                        <span class="colorText">
-                            Cerrar sesión
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+<div id="switchColor" class="colorText">
+	Theme
+	<label class="switch">
+		<input type="checkbox" id="switchColorInput">
+		<div class="slider round"></div>
+	</label>
 </div>
-<div id="messagehelp" class="hide">
-    Visualiza tu información, cambia tus datos, o cierra sesión en la App!
-    
+<div class="container">
+	<div class="card">
+		<div id="form-settings">
+			<h4 class="textHeader colorText">
+				AJUSTES
+			</h4>
+			<div id="container-settings" class="">
+				<a href="./../../controllers/changePassword.php">
+					<div
+						id="ajustes" class="content-settings colorContainers">
+						{# <img src="././../views/img/pass.png" /> #}
+						<i class="fa-solid fa-key colorText"></i>
+						<br/>
+						<span class="colorText">
+							Cambiar contraseña
+						</span>
+					</div>
+				</a>
+				<a href="./../../controllers/logout.php">
+					<div
+						id="cerrarSesion" class="content-settings colorContainers">
+						{# <img src="././../views/img/cerrar.png" /> #}
+						<i class="fa-solid fa-right-from-bracket colorText"></i>
+						<br/>
+						<span class="colorText">
+							Cerrar sesión
+						</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="messagehelp" class="hide colorText colorContainers">
+	Visualiza tu información, cambia tus datos, o cierra sesión en la App!
 </div>
 {% include "hook/footer.twig" %}
