@@ -25,14 +25,14 @@ if (!isset($_SESSION['user_id'])) {
                                 'type' => 'success',
                                 'text' => $dataUser
                             ];
-                            echo $twig->render('changePassword.twig', compact('nameView', 'message'));
+                            echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
                         } else {
                             $nameView = 'bo_changePassword';
                             $message = [
                                 'type' => 'error',
                                 'text' => $dataUser
                             ];
-                            echo $twig->render('changePassword.twig', compact('nameView', 'message'));
+                            echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
                         }
                     } else {
                         $nameView = 'bo_changePassword';
@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
                             'type' => 'error',
                             'text' => 'Error, la verificacion de nueva contraseña no coinciden'
                         ];
-                        echo $twig->render('changePassword.twig', compact('nameView', 'message'));
+                        echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
                     }
                 } else {
                     $nameView = 'bo_changePassword';
@@ -48,7 +48,7 @@ if (!isset($_SESSION['user_id'])) {
                         'type' => 'error',
                         'text' => 'Error, la contraseña ingresada, no es la misma para iniciar sesion'
                     ];
-                    echo $twig->render('changePassword.twig', compact('nameView', 'message'));
+                    echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
                 }
             } else {
                 $nameView = 'bo_changePassword';
@@ -56,7 +56,7 @@ if (!isset($_SESSION['user_id'])) {
                     'type' => 'error',
                     'text' => 'Error, algo paso y no se pudo consultar la contraseña actual'
                 ];
-                echo $twig->render('changePassword.twig', compact('nameView', 'message'));
+                echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
             }
         } else {
             $nameView = 'bo_changePassword';
@@ -64,10 +64,10 @@ if (!isset($_SESSION['user_id'])) {
                 'type' => 'error',
                 'text' => 'Error, tienes que diligenciar todos los campos'
             ];
-            echo $twig->render('changePassword.twig', compact('nameView', 'message'));
+            echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
         }
     } else {
         $nameView = 'bo_changePassword';
-        echo $twig->render('changePassword.twig', compact('nameView'));
+        echo $twig->render('front/changePassword.twig', compact('nameView'));
     }
 }

@@ -7,5 +7,5 @@ if (!isset($_SESSION['user_id'])) {
     die();
 }else{
     $nameView = 'bo_myaccount';
-    echo $twig->render('myaccount.twig', compact('nameView'));
+    echo $twig->render('front/myaccount.twig', compact('nameView'));
 }

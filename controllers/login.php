@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
                     'text' => 'Error, los datos ingresados no son correctos o no existen'
                 ];
                 $nameView = 'bo_login';
-                echo $twig->render('login.twig', compact('nameView', 'message'));
+                echo $twig->render('front/login.twig', compact('nameView', 'message'));
             }
         } else {
             $message = [
@@ -29,15 +29,15 @@ if (!isset($_SESSION['user_id'])) {
                 'text' => 'Error, se tiene que llenar todos los campos'
             ];
             $nameView = 'bo_login';
-            echo $twig->render('login.twig', compact('nameView', 'message'));
+            echo $twig->render('front/login.twig', compact('nameView', 'message'));
         }
     } else {
         $nameView = 'bo_login';
-        echo $twig->render('login.twig', compact('nameView'));
+        echo $twig->render('front/login.twig', compact('nameView'));
     }
 } else {
     $nameView = 'bo_myaccount';
-    echo $twig->render('myaccount.twig', compact('nameView'));
+    echo $twig->render('front/myaccount.twig', compact('nameView'));
 }
 
 
@@ -58,7 +58,7 @@ if (!isset($_SESSION['user_id'])) {
 //     echo "No se encuentra el usuario";
 // }
 // } else if (session_status() === PHP_SESSION_ACTIVE) {
-// echo $twig->render('myaccount.twig');
+// echo $twig->render('front/myaccount.twig');
 // header("Location: myaccount");
 // @session_start();
 // session_destroy();

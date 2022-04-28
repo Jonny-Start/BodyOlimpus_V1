@@ -42,14 +42,14 @@ if (!isset($_SESSION['user_id'])) {
                     'type' => 'success',
                     'text' => $respond['message']
                 ];
-                echo $twig->render('profile.twig', compact('nameView', 'message', 'dataUser', 'old'));
+                echo $twig->render('front/profile.twig', compact('nameView', 'message', 'dataUser', 'old'));
             } else {
                 $nameView = 'bo_profileUpdate';
                 $message = [
                     'type' => 'error',
                     'text' => $respond['message']
                 ];
-                echo $twig->render('profileUpdate.twig', compact('nameView', 'message', 'dataUser', 'old'));
+                echo $twig->render('front/profileUpdate.twig', compact('nameView', 'message', 'dataUser', 'old'));
             }
         } else {
             $id_user = $_SESSION['user_id'];
@@ -62,7 +62,7 @@ if (!isset($_SESSION['user_id'])) {
                 'type' => 'error',
                 'text' => 'Error, Todos los campos tienen que estar diligenciados'
             ];
-            echo $twig->render('profileUpdate.twig', compact('nameView', 'message', 'dataUser'));
+            echo $twig->render('front/profileUpdate.twig', compact('nameView', 'message', 'dataUser'));
         }
     } else {
         $id_user = $_SESSION['user_id'];
@@ -71,6 +71,6 @@ if (!isset($_SESSION['user_id'])) {
             $dataUser = $dataUser[0];
         }
         $nameView = 'bo_profileUpdate';
-        echo $twig->render('profileUpdate.twig', compact('nameView', 'dataUser'));
+        echo $twig->render('front/profileUpdate.twig', compact('nameView', 'dataUser'));
     }
 }

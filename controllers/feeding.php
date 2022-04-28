@@ -7,5 +7,5 @@ if (!isset($_SESSION['user_id'])) {
     die();
 }else{
     $nameView = 'bo_feeding';
-    echo $twig->render('feeding.twig', compact('nameView'));
+    echo $twig->render('front/feeding.twig', compact('nameView'));
 }

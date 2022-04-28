@@ -64,6 +64,15 @@ function helpMessage() {
     }
 }
 
+function toggleMenu() {
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigationAdmin');
+    let main = document.querySelector('.main');
+
+    toggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+    main.classList.toggle('active');
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     bodyActive();

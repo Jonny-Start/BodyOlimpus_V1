@@ -19,14 +19,14 @@ if (!isset($_SESSION['user_id'])) {
                     'type' => 'success',
                     'text' => $dataUser
                 ];
-                echo $twig->render('weight.twig', compact('nameView', 'message'));
+                echo $twig->render('front/weight.twig', compact('nameView', 'message'));
             } else {
                 $nameView = 'bo_weight';
                 $message = [
                     'type' => 'error',
                     'text' => $dataUser
                 ];
-                echo $twig->render('weight.twig', compact('nameView', 'message'));
+                echo $twig->render('front/weight.twig', compact('nameView', 'message'));
             }
         } else {
             $nameView = 'bo_weight';
@@ -34,10 +34,10 @@ if (!isset($_SESSION['user_id'])) {
                 'type' => 'error',
                 'text' => 'Error, el campo tiene que estar diligenciado'
             ];
-            echo $twig->render('weight.twig', compact('nameView', 'message'));
+            echo $twig->render('front/weight.twig', compact('nameView', 'message'));
         }
     } else {
         $nameView = 'bo_weight';
-        echo $twig->render('weight.twig', compact('nameView'));
+        echo $twig->render('front/weight.twig', compact('nameView'));
     }
 }

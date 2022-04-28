@@ -19,17 +19,17 @@ if (!isset($_SESSION['user_id'])) {
                 'type' => 'success',
                 'text' => $dataUser
             ];
-            echo $twig->render('place.twig', compact('nameView', 'message'));
+            echo $twig->render('front/place.twig', compact('nameView', 'message'));
         } else {
             $nameView = 'bo_place';
             $message = [
                 'type' => 'error',
                 'text' => $dataUser
             ];
-            echo $twig->render('place.twig', compact('nameView', 'message'));
+            echo $twig->render('front/place.twig', compact('nameView', 'message'));
         }
     } else {
         $nameView = 'bo_place';
-        echo $twig->render('place.twig', compact('nameView'));
+        echo $twig->render('front/place.twig', compact('nameView'));
     }
 }

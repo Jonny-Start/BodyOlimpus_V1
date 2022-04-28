@@ -61,7 +61,7 @@ if (!isset($_SESSION['user_id'])) {
             $weightFormat = implode(", ", $pesoArray);
 
             $nameView = 'bo_graphics';
-            echo $twig->render('graphics.twig', compact('nameView', 'IMC', 'IMCtext', 'dateFormat', 'weightFormat'));
+            echo $twig->render('front/graphics.twig', compact('nameView', 'IMC', 'IMCtext', 'dateFormat', 'weightFormat'));
 
         } else {
             $nameView = 'bo_graphics';
@@ -69,7 +69,7 @@ if (!isset($_SESSION['user_id'])) {
                 'type' => 'error',
                 'text' => 'Aun no tienes datos para graficar'
             ];
-            echo $twig->render('graphics.twig', compact('nameView', 'message'));
+            echo $twig->render('front/graphics.twig', compact('nameView', 'message'));
         }
     } else {
         $nameView = 'bo_graphics';
@@ -77,6 +77,6 @@ if (!isset($_SESSION['user_id'])) {
             'type' => 'error',
             'text' => 'Aun no tienes datos para graficar'
         ];
-        echo $twig->render('graphics.twig', compact('nameView', 'message'));
+        echo $twig->render('front/graphics.twig', compact('nameView', 'message'));
     }
 }

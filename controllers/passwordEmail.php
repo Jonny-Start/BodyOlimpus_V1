@@ -34,14 +34,14 @@ if (!empty($_POST['submitPassEmail'])) {
                         'type' => 'success',
                         'text' => 'Contraseña actualizada, revisa tu correo electronico.'
                     ];
-                    echo $twig->render('passwordEmail.twig', compact('nameView', 'message'));
+                    echo $twig->render('front/passwordEmail.twig', compact('nameView', 'message'));
                 } else {
                     $nameView = 'bo_passwordEmail';
                     $message = [
                         'type' => 'error',
                         'text' => 'No se pudo actualizar la contraseña'
                     ];
-                    echo $twig->render('passwordEmail.twig', compact('nameView', 'message'));
+                    echo $twig->render('front/passwordEmail.twig', compact('nameView', 'message'));
                 }
             } else {
                 $nameView = 'bo_passwordEmail';
@@ -49,7 +49,7 @@ if (!empty($_POST['submitPassEmail'])) {
                     'type' => 'error',
                     'text' => 'No se pudo actualizar la contraseña'
                 ];
-                echo $twig->render('passwordEmail.twig', compact('nameView', 'message'));
+                echo $twig->render('front/passwordEmail.twig', compact('nameView', 'message'));
             }
         } else {
             $nameView = 'bo_passwordEmail';
@@ -57,7 +57,7 @@ if (!empty($_POST['submitPassEmail'])) {
                 'type' => 'error',
                 'text' => 'El correo electronico ingresado no tiene cuenta en BodyOlimpus'
             ];
-            echo $twig->render('passwordEmail.twig', compact('nameView', 'message'));
+            echo $twig->render('front/passwordEmail.twig', compact('nameView', 'message'));
         }
     } else {
         $nameView = 'bo_passwordEmail';
@@ -65,9 +65,9 @@ if (!empty($_POST['submitPassEmail'])) {
             'type' => 'error',
             'text' => 'Tiene que agregar un correo electronico para poder restablecer la contraseña'
         ];
-        echo $twig->render('passwordEmail.twig', compact('nameView', 'message'));
+        echo $twig->render('front/passwordEmail.twig', compact('nameView', 'message'));
     }
 } else {
     $nameView = 'bo_passwordEmail';
-    echo $twig->render('passwordEmail.twig', compact('nameView'));
+    echo $twig->render('front/passwordEmail.twig', compact('nameView'));
 }

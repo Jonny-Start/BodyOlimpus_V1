@@ -29,14 +29,14 @@ if (!empty($_POST['createAcount'])) {
                 'type' => 'success',
                 'text' => $dataUser . ' Revisa tu correo electronico para saber tu contraseña'
             ];
-            echo $twig->render('create_account.twig', compact('nameView', 'message'));
+            echo $twig->render('front/create_account.twig', compact('nameView', 'message'));
         } else {
             $nameView = 'bo_create_account';
             $message = [
                 'type' => 'error',
                 'text' => $dataUser
             ];
-            echo $twig->render('create_account.twig', compact('nameView', 'message'));
+            echo $twig->render('front/create_account.twig', compact('nameView', 'message'));
         }
     }else{
         $nameView = 'bo_create_account';
@@ -44,9 +44,9 @@ if (!empty($_POST['createAcount'])) {
             'type' => 'error',
             'text' => 'Todos los datos campos tienen que estar diligenciados'
         ];
-        echo $twig->render('create_account.twig', compact('nameView', 'message'));
+        echo $twig->render('front/create_account.twig', compact('nameView', 'message'));
     }
 } else {
     $nameView = 'bo_create_account';
-    echo $twig->render('create_account.twig', compact('nameView'));
+    echo $twig->render('front/create_account.twig', compact('nameView'));
 }
