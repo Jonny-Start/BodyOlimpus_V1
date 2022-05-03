@@ -32,10 +32,18 @@ if (!isset($_SESSION['user_id'])) {
             echo $twig->render('admin/login.twig', compact('nameView', 'message'));
         }
     } else {
-        $nameView = 'bo_dashboard';
-        echo $twig->render('admin/dashboard.twig', compact('nameView'));
+        // $nameView = 'bo_dashboard';
+        // echo $twig->render('admin/dashboard.twig', compact('nameView'));
+        $nameView = 'bo_users';
+        echo $twig->render('admin/users.twig', compact('nameView'));
+        // $nameView = 'bo_prospects';
+        // echo $twig->render('admin/prospects.twig', compact('nameView'));
     }
 } else {
-    $nameView = 'bo_dashboard';
-    echo $twig->render('admin/dashboard.twig', compact('nameView'));
+    // $nameView = 'bo_dashboard';
+    // echo $twig->render('admin/dashboard.twig', compact('nameView'));
+    //   $nameView = 'bo_prospects';
+    //     echo $twig->render('admin/prospects.twig', compact('nameView'));
+    $nameView = 'bo_users';
+    echo $twig->render('admin/users.twig', compact('nameView'));
 }

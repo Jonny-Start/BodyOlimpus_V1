@@ -1,0 +1,145 @@
+{% include "admin/layout/headAdmin.twig" %}
+
+<div class="container">
+	<div class="navigationAdmin">
+		<ul>
+			<li><a href=""><span class="icon img"><img src="../views/img/LogoBodyOlimpus_White.png" alt="Imagen BodyOlimpus"></span><span class="title"><h2>BodyOlimpus</h2></span></a></li>
+			<li><a href="#"><span class="icon"><i class="fa-solid fa-house"></i></span><span class="title">Dashboard</span></a></li>
+			<li><a href="./../../controllers/users.php"><span class="icon"><i class="fa-solid fa-users"></i></span><span class="title">Users</span></a></li>
+			<li><a href="#"><span class="icon"><i class="fa-solid fa-newspaper"></i></span><span class="title">Contents</span></a></li>
+			<li><a href="#"><span class="icon"><i class="fa-solid fa-circle-question"></i></span><span class="title">Help</span></a></li>
+			<li><a href="#"><span class="icon"><i class="fa-solid fa-gear"></i></span><span class="title">Settings</span></a></li>
+			<li><a href=""><span class="icon"><i class="fa-solid fa-lock"></i></span><span class="title">Password</span></a></li>
+			<li><a href="./../../controllers/logout.php"><span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span><span class="title">Sign Out</span></a></li>
+		</ul>
+	</div>
+
+	<div class="main">
+		<div class="topbar">
+			<div class="toggle" onclick="toggleMenu();"></div>
+
+			<div class="user">
+				<img src="https://pps.whatsapp.net/v/t61.24694-24/182069071_115568687401715_8146014857926887457_n.jpg?ccb=11-4&oh=7335893595b1fcc4b3429577225464e7&oe=627170BD" alt="">
+			</div>
+		</div>
+		<div class="details">
+			<div class="recentOrders">
+				<div class="cardHeader">
+					<h2>Usuarios de la App</h2>
+					<div class="search">
+						<label>
+							<input type="text" placeholder="Buscar"/>
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</label>
+					</div>
+					<a href="#" class="btn">
+						+ Nuevo</a>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<td>Nombre y Apellido
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+							<td>Ciudad
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+							<td>Nivel
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+							<td>Estado
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+							<td>Editar
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Jonny Alejandro Cano</td>
+							<td>Medellín</td>
+							<td>Principiante</td>
+							<td>
+								<span class="status delivered">Activo</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+						<tr>
+							<td>Karen Juliana Gómez</td>
+							<td>Bogotá</td>
+							<td>Medium</td>
+							<td>
+								<span class="status delivered">Activo</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+						<tr>
+							<td>Mariano Perez</td>
+							<td>Barranquilla</td>
+							<td>Master</td>
+							<td>
+								<span class="status return">Inactivo</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+						<tr>
+							<td>Ricardo Arjona</td>
+							<td>Cartagena</td>
+							<td>Medium</td>
+							<td>
+								<span class="status pending">En validación</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+						<tr>
+							<td>Jonny Alejandro Cano</td>
+							<td>Medellín</td>
+							<td>Principiante</td>
+							<td>
+								<span class="status delivered">Activo</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+						<tr>
+							<td>Karen Juliana Gómez</td>
+							<td>Bogotá</td>
+							<td>Principiante</td>
+							<td>
+								<span class="status delivered">Activo</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+						<tr>
+							<td>Mariano Perez</td>
+							<td>Barranquilla</td>
+							<td>Medium</td>
+							<td>
+								<span class="status return">Inactivo</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+{# <script src="https://kit.fontawesome.com/572f592c32.js" crossorigin="anonymous"></script>
+{% include "admin/layout/scriptsAdmin.twig" %} #}
