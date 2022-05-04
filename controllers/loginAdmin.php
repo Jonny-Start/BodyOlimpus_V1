@@ -6,16 +6,20 @@ require(__DIR__ . '/../classes/BodyOlimpusLoginAdmin.php');
 
 if (!isset($_SESSION['user_id'])) {
     if (!empty($_POST['submit'])) {
-        if (!empty($_POST['username']) && !empty($_POST['password'])) {
+        if (!empty($_POST['username']) && !empty($_POST['pass'])) {
             $username = $_POST['username']; // traigo los datos que envie en el post si existen
-            $pass = $_POST['password']; // traigo los datos que envie en el post si existen
+            $pass = $_POST['pass']; // traigo los datos que envie en el post si existen
 
             $dataUser = BodyOlimpusLoginAdmin::getLogingAdmin($username, $pass); // consulto en BD los dato que recojo
 
-            if (!empty($dataUser) && password_verify($_POST['password'], $dataUser['pass'])) {
+            if (!empty($dataUser) && password_verify($_POST['pass'], $dataUser['pass'])) {
                 $_SESSION['user_id'] = $dataUser['id_userAdmin'];
                 header("Location: admin/dashboard.php");
             } else {
+                echo("Hola");
+                echo($dataUser["username"]);
+                echo($dataUser["pass"]);
+                die("");
                 $message = [
                     'type' => 'error',
                     'text' => 'Error, los datos ingresados no son correctos o no existen'
@@ -32,18 +36,9 @@ if (!isset($_SESSION['user_id'])) {
             echo $twig->render('admin/login.twig', compact('nameView', 'message'));
         }
     } else {
-        // $nameView = 'bo_dashboard';
-        // echo $twig->render('admin/dashboard.twig', compact('nameView'));
-        $nameView = 'bo_users';
-        echo $twig->render('admin/users.twig', compact('nameView'));
-        // $nameView = 'bo_prospects';
-        // echo $twig->render('admin/prospects.twig', compact('nameView'));
+        $nameView = 'bo_loginAdmin';
+        echo $twig->render('admin/login.twig', compact('nameView'));
     }
 } else {
-    // $nameView = 'bo_dashboard';
-    // echo $twig->render('admin/dashboard.twig', compact('nameView'));
-    //   $nameView = 'bo_prospects';
-    //     echo $twig->render('admin/prospects.twig', compact('nameView'));
-    $nameView = 'bo_users';
-    echo $twig->render('admin/users.twig', compact('nameView'));
+    header("Location: admin/dashboard.php");
 }
