@@ -15,7 +15,7 @@ function bodyActive() {
     if (bo_body == 'bo_myaccount') {
         const elementFooter = document.getElementById('footerHome');
         elementFooter.classList.add('active');
-    } else if (bo_body == 'bo_profile') {
+    } else if (bo_body == 'bo_notifications') {
         const elementFooter = document.getElementById('footerProfile');
         elementFooter.classList.add('active');
     } else if (bo_body == 'bo_settings') {
@@ -116,5 +116,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
 });
+
+//Display subTitles navBar Admin 
+function displaySubtitles(className) {
+    var elements = document.querySelectorAll('.' + className);
+    var elementParen = document.querySelector('.' + className + "Parent");
+    elementParen.classList.toggle('active');
+    elements.forEach(elementUn => {
+        elementUn.classList.toggle('active');
+    });
+}

@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="../../views/css/mainAdmin.css">
+
+<div class="limiter" id="bo_verificationCode">
+	<div class="container-login100" style="background-image: url('./../../views/img/fondoBO.jpg');">
+		<div class="wrap-login100 p-t-30 p-b-50">
+			<span class="login100-form-title p-b-41">
+				Código de verificación
+			</span>
+			<p id="descriptionNumbers">Por seguridad se le envió un código de 4 dígitos al correo electrónico asociado, por favor ingresarlo.</p>
+			<form class="login100-form validate-form p-b-33 p-t-5" action="verificationCode.php" method="POST">
+				<div class="container-login100-form-btn m-t-32">
+					<div id="contentNumbers">
+						<input type="number" name="first" required>
+						<input type="number" name="second" required>
+						<input type="number" name="third" required>
+						<input type="number" name="fourth" required>
+					</div>
+					<a href="#" id="newCode">Solicitar nuevo código</a>
+					<button class="login100-form-btn" type="submit" name="submit" id="submit" value="Ingresar" style="margin-top: 1em; margin-bottom: 1em;">
+						Enter
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% include "admin/layout/footerAdmin.twig" %}

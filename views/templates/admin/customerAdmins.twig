@@ -1,0 +1,69 @@
+{% include "admin/layout/headAdmin.twig" %}
+{% include "admin/head.twig" %}
+
+<div class="container">
+	{% include "admin/layout/navBar.twig" %}
+
+	<div class="main">
+		<div class="topbar">
+			<div class="toggle" onclick="toggleMenu();"></div>
+			<div class="user">
+				<img src="../../views/img/Logo_Black_Cuadrado.png" alt="">
+			</div>
+		</div>
+
+		<div class="details">
+			<div class="recentOrders">
+				<div class="cardHeader">
+					<h2>Cuentas de clientes admin</h2>
+					<div class="search">
+						<label>
+							<input type="text" placeholder="Buscar"/>
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</label>
+					</div>
+					<a href="/../../controllers/admin/customerAdminsCRUD.php" class="btn">
+						+ Nuevo</a>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<td>Nombre
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+                            <td>Gym
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+							<td>localidad
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+							<td>Estado
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+							<td>Editar
+								<i class="fa-solid fa-angle-down"></i>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Jonny Alejandro Cano</td>
+							<td>Medellín</td>
+                            <td>BodyGym</td>
+							<td>
+								<span class="status delivered">Activo</span>
+							</td>
+							<td>
+								<i class="fa-solid fa-pencil"></i>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+{# <script src="https://kit.fontawesome.com/572f592c32.js" crossorigin="anonymous"></script>
+{% include "admin/layout/scriptsAdmin.twig" %} #}

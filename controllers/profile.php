@@ -21,5 +21,5 @@ if (!isset($_SESSION['user_id'])) {
     $old = $edad->y;
 
     $nameView = 'bo_profile';
-    echo $twig->render('front/profile.twig', compact('nameView', 'dataUser','old'));
+    echo $twig->render('front/profile.twig', compact('nameView', 'dataUser', 'old'));
 }

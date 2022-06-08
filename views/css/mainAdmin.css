@@ -505,3 +505,47 @@ iframe {
         opacity: 1;
     }
 }
+
+
+/*___________________________ BO*/
+
+div#bo_verificationCode div#contentNumbers {
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 10em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1em;
+    border-radius: 9px 9px 0px 0px;
+}
+
+p#descriptionNumbers {
+    color: wheat;
+    text-align: center;
+}
+
+div#bo_verificationCode div#contentNumbers input[type=number] {
+    -moz-appearance: textfield;
+    width: 20%;
+    height: 30%;
+    background-color: white;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+div#bo_verificationCode div#contentNumbers input[type=number]::-webkit-inner-spin-button,
+div#bo_verificationCode div#contentNumbers input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+a#newCode {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.3em;
+}

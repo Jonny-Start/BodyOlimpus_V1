@@ -759,7 +759,7 @@ Here, we override the ``date`` filter with a custom one. Using this extension
 is as simple as registering the ``MyCoreExtension`` extension by calling the
 ``addExtension()`` method on the environment instance::
 
-    $twig = new \Twig\Environment($loader);
+     = new \Twig\Environment($loader);
     $twig->addExtension(new MyCoreExtension());
 
 Tags

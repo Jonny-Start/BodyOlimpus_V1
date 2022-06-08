@@ -8,6 +8,6 @@ if (!isset($_SESSION['userAdmin_id'])) {
     die();
 } else {
     $dataUsersAll = BodyOlimpusDataUser::getAllUsers();
-    $nameView = 'bo_dashboard';
-    echo $twig->render('admin/dashboard.twig', compact('nameView', 'dataUsersAll'));
+    $nameView = 'bo_users';
+    echo $twig->render('admin/users.twig', compact('nameView', 'dataUsersAll'));
 }

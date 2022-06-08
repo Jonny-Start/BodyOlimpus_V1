@@ -52,18 +52,12 @@ if (!isset($_SESSION['user_id'])) {
                 }
             } else {
                 $nameView = 'bo_changePassword';
-                $message = [
-                    'type' => 'error',
-                    'text' => 'Error, algo paso y no se pudo consultar la contraseña actual'
-                ];
+                $message = ['type' => 'error','text' => 'Error, algo paso y no se pudo consultar la contraseña actual'];
                 echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
             }
         } else {
             $nameView = 'bo_changePassword';
-            $message = [
-                'type' => 'error',
-                'text' => 'Error, tienes que diligenciar todos los campos'
-            ];
+            $message = ['type' => 'error', 'text' => 'Error, tienes que diligenciar todos los campos'];
             echo $twig->render('front/changePassword.twig', compact('nameView', 'message'));
         }
     } else {

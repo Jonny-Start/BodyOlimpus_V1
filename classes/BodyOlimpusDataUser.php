@@ -1,5 +1,5 @@
 <?php
-require_once((__DIR__) .'/db/DB.php');
+require_once((__DIR__) . '/db/DB.php');
 class BodyOlimpusDataUser extends DB
 {
     public static function updateGender($gender, $id_user)
@@ -14,6 +14,13 @@ class BodyOlimpusDataUser extends DB
             $message = "Error al actualizar el genero";
         }
         return $message;
+    }
+
+    public static function getAllUsers()
+    {
+        $sql = DB::DBconnect()->query("SELECT * FROM bo_user");
+        $UsersAll = $sql->fetchAll();
+        return $UsersAll;
     }
 
     public static function updatePlace($place, $id_user)
@@ -53,7 +60,6 @@ class BodyOlimpusDataUser extends DB
                 'message' => $message,
                 'dataUser' => $rows[0]
             ];
-
         } else {
             $message = "Error al actualizar los datos de usuario";
             $sqli = DB::DBconnect()->query("SELECT * FROM `bo_user` WHERE id_user = $id_user");
@@ -85,7 +91,7 @@ class BodyOlimpusDataUser extends DB
         $sqli = DB::DBconnect()->query("UPDATE bo_user SET actual_weight = '$weight' WHERE bo_user.id_user = '$id_user'");
         if (($sql->fetchAll()) > 0) {
             $message = "Peso registrado pero no se actualizo en tu perfil";
-            if(($sqli->fetchAll()) > 0){
+            if (($sqli->fetchAll()) > 0) {
                 $message = "Peso actualizado y registrado en tu perfil";
             }
         } else {
@@ -99,9 +105,9 @@ class BodyOlimpusDataUser extends DB
         // require_once(__DIR__ . '/db/DB.php');
         $sql = DB::DBconnect()->query("SELECT actual_weight, height_user, gender FROM `bo_user` WHERE id_user = $id_user");
         $rows = $sql->fetchAll();
-        if(!empty($rows)){ 
+        if (!empty($rows)) {
             $rows = $rows[0];
-        }else{
+        } else {
             $rows = '';
         }
         return $rows;
@@ -139,5 +145,4 @@ class BodyOlimpusDataUser extends DB
         }
         return $message;
     }
-
 }

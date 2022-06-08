@@ -7,7 +7,7 @@ if (!isset($_SESSION['userAdmin_id'])) {
     header("Location: ../loginAdmin.php");
     die();
 } else {
-    $dataUsersAll = BodyOlimpusDataUser::getAllUsers();
-    $nameView = 'bo_dashboard';
-    echo $twig->render('admin/dashboard.twig', compact('nameView', 'dataUsersAll'));
+    // $dataUsersAll = BodyOlimpusDataUser::getAllUsers();
+    $nameView = 'bo_coach';
+    echo $twig->render('admin/coach.twig', compact('nameView'));
 }
