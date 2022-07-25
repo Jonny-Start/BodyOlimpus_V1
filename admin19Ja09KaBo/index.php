@@ -20,5 +20,6 @@ header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-header("Location: ../controllers/loginAdmin.php");
+// header("Location: ../controllers/loginAdmin.php");
+require dirname(__FILE__) . '/../controllers/loginAdmin.php';
 exit;

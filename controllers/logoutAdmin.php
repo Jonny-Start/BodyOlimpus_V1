@@ -5,5 +5,5 @@ session_unset();
 
 session_destroy();
 
-header('Location: ./loginAdmin.php');
+header('Location: ../admin19Ja09KaBo');
 ?>

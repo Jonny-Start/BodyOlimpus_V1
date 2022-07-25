@@ -1,14 +1,3 @@
-CREATE TABLE IF NOT EXISTS PREFIX_admins (
-  id_userAdmin int(11) NOT NULL AUTO_INCREMENT,
-  id_customerAccount int(11) DEFAULT NULL,
-  username varchar(255) NOT NULL,
-  pass varchar(255) NOT NULL,
-  code_email int(11) DEFAULT NULL,
-  rol_admin tinyint(1) NOT NULL,
-  ip_connect varchar(255) DEFAULT NULL,
-  PRIMARY KEY (id_userAdmin)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-
 CREATE TABLE IF NOT EXISTS PREFIX_customeraccount (
   id_customerAccount int(11) NOT NULL AUTO_INCREMENT,
   firstName varchar(255) NOT NULL,
@@ -30,8 +19,20 @@ CREATE TABLE IF NOT EXISTS PREFIX_customeraccount (
   PRIMARY KEY (id_customerAccount)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
+CREATE TABLE IF NOT EXISTS PREFIX_admins (
+  id_userAdmin int(11) NOT NULL AUTO_INCREMENT,
+  id_customerAccount int(11) DEFAULT NULL,
+  username varchar(255) NOT NULL,
+  pass varchar(255) NOT NULL,
+  code_email int(11) DEFAULT NULL,
+  rol_admin tinyint(1) NOT NULL,
+  ip_connect varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id_userAdmin)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
 CREATE TABLE IF NOT EXISTS PREFIX_user (
   id_user int(11) NOT NULL AUTO_INCREMENT,
+  id_customerAccount int(11) DEFAULT NULL,
   first_name varchar(255) DEFAULT NULL,
   last_name varchar(255) DEFAULT NULL,
   height_user varchar(255) DEFAULT NULL,
@@ -53,8 +54,8 @@ CREATE TABLE IF NOT EXISTS PREFIX_user (
 
 CREATE TABLE IF NOT EXISTS PREFIX_weight (
   id_weight int(11) NOT NULL AUTO_INCREMENT,
-  weight varchar(255) NOT NULL,
   id_user int(11) NOT NULL,
+  weightUser varchar(255) NOT NULL,
   date_weight date NOT NULL COMMENT 'fecha de este registro',
   PRIMARY KEY (id_weight)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
