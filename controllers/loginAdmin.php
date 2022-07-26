@@ -2,6 +2,7 @@
 session_start(); //creo una sesion o reanudo una que ya tengo
 require_once __DIR__ . '/../config/config.php';
 require(__DIR__ . '/../classes/BodyOlimpusAdmins.php');
+$nameView = 'bo_loginAdmin';
 
 if (isset($_SESSION['userVerification_id'])) {
     return header("Location: admin/verificationCode.php");
@@ -13,7 +14,6 @@ if (!empty($_POST['submit'])) {
 
     if (empty($_POST['username']) || empty($_POST['pass'])) {
         $message = ['type' => 'error', 'text' => 'Error, se tiene que llenar todos los campos'];
-        $nameView = 'bo_loginAdmin';
         echo $twig->render('admin/login.twig', compact('nameView', 'message'));
         return false;
     }
@@ -23,6 +23,20 @@ if (!empty($_POST['submit'])) {
     $dataUser = BodyOlimpusAdmins::getLogingAdmin($username); //Extraigo los datos de ese user name
 
     if (!empty($dataUser) && password_verify($_POST['pass'], $dataUser['pass'])) {
+        /**
+         * Intento de variable global
+         */
+        $user = (object) [
+            'propertyOne' => 'foo',
+            'propertyTwo' => 42,
+        ];
+        $context = [];
+        array_push($context, $user);
+        $_SESSION["$context"];
+        /**
+         * Intento de variable global
+         */
+        
         $ip = getenv('REMOTE_ADDR');
         $BodyOlimpusAdmins = new BodyOlimpusAdmins($dataUser['id_userAdmin']);
         if (empty($BodyOlimpusAdmins->ip_connect)) {
@@ -58,11 +72,9 @@ if (!empty($_POST['submit'])) {
         $_SESSION['userAdmin_id'] = $dataUser['id_userAdmin'];
         header("Location: admin/dashboard.php");
     } else {
-        $message = ['type' => 'error','text' => 'Error, los datos ingresados no son correctos o no existen'];
-        $nameView = 'bo_loginAdmin';
+        $message = ['type' => 'error', 'text' => 'Error, los datos ingresados no son correctos o no existen'];
         echo $twig->render('admin/login.twig', compact('nameView', 'message'));
     }
 } else {
-    $nameView = 'bo_loginAdmin';
     echo $twig->render('admin/login.twig', compact('nameView'));
 }
