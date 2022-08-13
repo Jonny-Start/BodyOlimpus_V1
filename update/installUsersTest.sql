@@ -1,5 +1,5 @@
-INSERT INTO `bo_customeraccount` (`id_customerAccount`, `firstName`, `lastName`, `identificationNumber`, `phoneNumber`, `gymName`, `locationCustomer`, `accountType`, `availableUsers`, `paymentMethod`, `paymentAmount`, `active`, `activationDate`, `expirationDate`, `comments`, `date_add`, `date_upd`) VALUES
-(1, 'use test', 'proof', 1000000000, 3015018468, 'BodyOlimpus', 'Bogotá D.C (Colombia)', 1, 0, NULL, NULL, 1, LOCALTIME(), NULL, 'Super Admin ', LOCALTIME(), LOCALTIME());
+INSERT INTO `bo_customeraccount` (`id_customerAccount`, `firstName`, `lastName`, `identificationNumber`, `phoneNumber`, `gymName`, `locationCustomer`, `accountType`, `availableUsers`, `paymentMethod`, `paymentAmount`, `active`, `activationDate`, `expirationDate`, `comments`, `imgGym`, `imgBlackGym`, `date_add`, `date_upd`) VALUES
+(1, 'use test', 'proof', 1000000000, 3015018468, 'BodyOlimpus', 'Bogotá D.C (Colombia)', 1, 0, NULL, NULL, 1, LOCALTIME(), NULL, 'Super Admin', 'LogoBodyOlimpus_White.png', 'Logo_Black_Cuadrado.png' LOCALTIME(), LOCALTIME());
 
 INSERT INTO `bo_admins` (`id_userAdmin`, `id_customerAccount`, `username`, `pass`, `code_email`, `rol_admin`) VALUES
 (1, 1, 'user test', '$2y$10$tYc5x2dfdPqQxpFp.BVC9.HkCEGQLDCFWrU/RIdI.LkImxCfgh9ue', NULL, 1);

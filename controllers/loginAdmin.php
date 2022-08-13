@@ -2,6 +2,7 @@
 session_start(); //creo una sesion o reanudo una que ya tengo
 require_once __DIR__ . '/../config/config.php';
 require(__DIR__ . '/../classes/BodyOlimpusAdmins.php');
+require(__DIR__ . '/../classes/BodyOlimpusCustomerAccount.php');
 $nameView = 'bo_loginAdmin';
 
 if (isset($_SESSION['userVerification_id'])) {
@@ -23,20 +24,16 @@ if (!empty($_POST['submit'])) {
     $dataUser = BodyOlimpusAdmins::getLogingAdmin($username); //Extraigo los datos de ese user name
 
     if (!empty($dataUser) && password_verify($_POST['pass'], $dataUser['pass'])) {
-        /**
-         * Intento de variable global
-         */
-        $user = (object) [
-            'propertyOne' => 'foo',
-            'propertyTwo' => 42,
-        ];
-        $context = [];
-        array_push($context, $user);
-        $_SESSION["$context"];
-        /**
-         * Intento de variable global
-         */
         
+        $customerAccount = BodyOlimpusCustomerAccount::getDataContext($dataUser["id_userAdmin"]);
+        $userAdmin =[
+            'img' => $customerAccount['imgGym'],
+            'imgBlack' => $customerAccount['imgBlackGym'],
+            'nameGym' => $customerAccount['gymName'],
+            'rol'=> $customerAccount['rol_admin']
+        ];
+        pushContext("userAdmin", $userAdmin);
+
         $ip = getenv('REMOTE_ADDR');
         $BodyOlimpusAdmins = new BodyOlimpusAdmins($dataUser['id_userAdmin']);
         if (empty($BodyOlimpusAdmins->ip_connect)) {

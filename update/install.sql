@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS PREFIX_customeraccount (
   activationDate date NOT NULL,
   expirationDate date DEFAULT NULL,
   comments text,
+  imgGym varchar(255),
+	imgBlackGym varchar(255),
   date_add date NOT NULL,
   date_upd date NOT NULL,
   PRIMARY KEY (id_customerAccount)
