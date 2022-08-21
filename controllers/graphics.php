@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
-require(__DIR__ . '/../classes/BodyOlimpusDataUser.php');
+require(__DIR__ . '/../classes/BodyOlimpusUser.php');
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     die();
 } else {
     $id_user = $_SESSION['user_id'];
-    $dataUser = BodyOlimpusDataUser::getDataUserIMC($id_user);
+    $dataUser = BodyOlimpusUser::getDataUserIMC($id_user);
     if (!empty($dataUser) && !empty($dataUser['actual_weight']) && !empty($dataUser['height_user'])) {
         //Calcular IMC
         $peso = number_format(($dataUser['actual_weight']), 1);
@@ -42,7 +42,7 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         //Crear datos para grafica
-        $dataUser = BodyOlimpusDataUser::getDataUserChart($id_user);
+        $dataUser = BodyOlimpusUser::getDataUserChart($id_user);
 
         if (!empty($dataUser)) {
             // echo json_encode($dataUser);

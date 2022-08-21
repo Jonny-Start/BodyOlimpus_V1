@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
-require(__DIR__ . '/../classes/BodyOlimpusDataUser.php');
+require(__DIR__ . '/../classes/BodyOlimpusUser.php');
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
         $place = $_POST['place'];
         $id_user = $_SESSION['user_id'];
 
-        $dataUser = BodyOlimpusDataUser::updatePlace($place, $id_user);
+        $dataUser = BodyOlimpusUser::updatePlace($place, $id_user);
         if ($dataUser == "Espacio de ejercicio actualizado") {
             $nameView = 'bo_place';
             $message = [

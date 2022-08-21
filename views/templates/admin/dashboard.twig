@@ -7,8 +7,8 @@
 		<div class="cardBox">
 			<div class="card">
 				<div>
-					<div class="numbers">43</div>
-					<div class="cardName">Conectados hoy</div>
+					<div class="numbers">{{ totalLastEntryDate.total|number_format}}</div>
+					<div class="cardName">Ingresaron hoy al GYM</div>
 				</div>
 				<div class="iconBox">
 					<i class="fa-solid fa-eye"></i>
@@ -16,8 +16,8 @@
 			</div>
 			<div class="card">
 				<div>
-					<div class="numbers">80</div>
-					<div class="cardName">Usuarios Activos</div>
+					<div class="numbers">{{totalMyUser.total|number_format}}</div>
+					<div class="cardName">Total usuarios</div>
 				</div>
 				<div class="iconBox">
 					<i class="fa-solid fa-cart-shopping"></i>
@@ -25,8 +25,8 @@
 			</div>
 			<div class="card">
 				<div>
-					<div class="numbers">8</div>
-					<div class="cardName">Entrenadores</div>
+					<div class="numbers">{{totalUsersFinised.total|number_format}}</div>
+					<div class="cardName">Usuarios con plan vencido</div>
 				</div>
 				<div class="iconBox">
 					<i class="fa-solid fa-comment"></i>
@@ -34,8 +34,8 @@
 			</div>
 			<div class="card">
 				<div>
-					<div class="numbers">$6,042</div>
-					<div class="cardName">Ingresos por total de usuarios</div>
+					<div class="numbers">${{totalPayment.total|number_format}}</div>
+					<div class="cardName">Ingresos por total de usuarios activos</div>
 				</div>
 				<div class="iconBox">
 					<i class="fa-solid fa-dollar-sign"></i>
@@ -59,7 +59,17 @@
 						</tr>
 					</thead>
 					<tbody>
+					{% for user in dataUsersAll %}
 						<tr>
+							<td>{{user.first_name}} {{user.last_name}}</td>
+							<td>${{user.payment|number_format}}</td>
+							<td>{{user.payment_method}}</td>
+							<td>
+								<span class="status delivered">Renovada</span>
+							</td>
+						</tr>
+					{% endfor %}
+						{# <tr>
 							<td>Star Refrigerator</td>
 							<td>$1200</td>
 							<td>Paid</td>
@@ -130,7 +140,7 @@
 							<td>
 								<span class="status delivered">Renovada</span>
 							</td>
-						</tr>
+						</tr> #}
 					</tbody>
 				</table>
 			</div>
@@ -142,7 +152,18 @@
 				</div>
 				<table>
 					<tbody>
-						<tr>
+						{% for user in dataUsersAllRecent %}
+							<tr>
+								<td style="width: 60px">
+									<div class="imgBx"><img src="../../views/img/triangulo.png" alt=""></div>
+								</td>
+								<td>
+									<h3>{{user.first_name}} {{user.last_name}}<br><span>{{user.email}}</span>
+									</h3>
+								</td>
+							</tr>
+						{% endfor %}
+						{# <tr>
 							<td style="width: 60px">
 								<div class="imgBx"><img src="../../views/img/triangulo.png" alt=""></div>
 							</td>
@@ -213,7 +234,7 @@
 								<h3>Acosta<br><span>Colombia</span>
 								</h3>
 							</td>
-						</tr>
+						</tr> #}
 					</tbody>
 				</table>
 			</div>

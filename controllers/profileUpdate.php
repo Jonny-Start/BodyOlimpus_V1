@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
-require(__DIR__ . '/../classes/BodyOlimpusDataUser.php');
+require(__DIR__ . '/../classes/BodyOlimpusUser.php');
 
 
 session_start();
@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
             $email = $_POST['email'];
             $last_update = date("Y-m-d");
 
-            $respond = BodyOlimpusDataUser::updateDataUserProfile($id_user, $first_name, $last_name, $height_user, $date_nac, $email, $phone_number, $last_update);
+            $respond = BodyOlimpusUser::updateDataUserProfile($id_user, $first_name, $last_name, $height_user, $date_nac, $email, $phone_number, $last_update);
             $dataUser = $respond['dataUser'];
 
             $fecha_nacimiento = new DateTime($dataUser['date_nac']);
@@ -53,7 +53,7 @@ if (!isset($_SESSION['user_id'])) {
             }
         } else {
             $id_user = $_SESSION['user_id'];
-            $dataUser = BodyOlimpusDataUser::getDataUserProfile($id_user);
+            $dataUser = BodyOlimpusUser::getDataUserProfile($id_user);
             if (!empty($dataUser)) {
                 $dataUser = $dataUser[0];
             }
@@ -66,7 +66,7 @@ if (!isset($_SESSION['user_id'])) {
         }
     } else {
         $id_user = $_SESSION['user_id'];
-        $dataUser = BodyOlimpusDataUser::getDataUserProfile($id_user);
+        $dataUser = BodyOlimpusUser::getDataUserProfile($id_user);
         if (!empty($dataUser)) {
             $dataUser = $dataUser[0];
         }

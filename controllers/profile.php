@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
-require(__DIR__ . '/../classes/BodyOlimpusDataUser.php');
+require(__DIR__ . '/../classes/BodyOlimpusUser.php');
 
 
 session_start();
@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
     die();
 } else {
     $id_user = $_SESSION['user_id'];
-    $dataUser = BodyOlimpusDataUser::getDataUserProfile($id_user);
+    $dataUser = BodyOlimpusUser::getDataUserProfile($id_user);
 
     if (!empty($dataUser)) {
         $dataUser = $dataUser[0];

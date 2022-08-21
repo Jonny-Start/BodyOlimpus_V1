@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
-require(__DIR__ . '/../../classes/BodyOlimpusDataUser.php');
+require(__DIR__ . '/../../classes/BodyOlimpusUser.php');
 
 session_start();
 if (!isset($_SESSION['userAdmin_id'])) {

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
-require(__DIR__ . '/../classes/BodyOlimpusDataUser.php');
+require(__DIR__ . '/../classes/BodyOlimpusUser.php');
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -14,11 +14,11 @@ if (!isset($_SESSION['user_id'])) {
             $confirmPass = $_POST['confirmPass'];
 
             $id_user = $_SESSION['user_id'];
-            $dataUser = BodyOlimpusDataUser::getPass($id_user);
+            $dataUser = BodyOlimpusUser::getPass($id_user);
             if (!empty($dataUser['passwd'])) {
                 if ((password_verify($_POST['actualPass'], $dataUser['passwd'])) == true) {
                     if ($newPass == $confirmPass) {
-                        $dataUser = BodyOlimpusDataUser::resetPassword($id_user, $newPass);
+                        $dataUser = BodyOlimpusUser::resetPassword($id_user, $newPass);
                         if ($dataUser == 'Contraseña actualizada') {
                             $nameView = 'bo_changePassword';
                             $message = [

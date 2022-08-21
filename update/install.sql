@@ -44,13 +44,16 @@ CREATE TABLE IF NOT EXISTS PREFIX_user (
   gender varchar(255) DEFAULT NULL,
   actual_weight int(11) DEFAULT '0' COMMENT 'Peso actual',
   date_nac date DEFAULT NULL COMMENT 'Fecha de nacimiento',
-  stateUser varchar(255) DEFAULT NULL COMMENT 'Estado de la cuenta',
+  payment int(11) DEFAULT NULL COMMENT 'cuanto paga',
+  payment_method varchar(255) DEFAULT NULL  COMMENT 'Método de pago',
   createAccount_date date DEFAULT NULL COMMENT 'fecha de inicio en el aplicativo',
   exercise_space varchar(255) DEFAULT NULL COMMENT 'Lugar de ejercicio',
   last_update date DEFAULT NULL COMMENT 'Ultima actualización en datos ',
-  user_activated int(11) DEFAULT '0',
+  user_activated int(11) DEFAULT '1',
   finish_date date DEFAULT NULL COMMENT 'Fecha finalización de la mensualidad (Solo si es usuario patrocinado por GYM) ',
   last_connection date DEFAULT NULL COMMENT 'Ultima conexión del usuario al aplicativo.',
+  lastEntryDate datetime DEFAULT NULL COMMENT 'ultima fecha de ingreso al GYM',
+  date_add date DEFAULT NULL COMMENT 'Fecha de creación',
   PRIMARY KEY (id_user)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 

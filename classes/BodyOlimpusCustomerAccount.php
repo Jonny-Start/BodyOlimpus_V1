@@ -39,7 +39,6 @@ class BodyOlimpusCustomerAccount extends DB
     public function add()
     {
         $sql = DB::DBconnect()->prepare("INSERT INTO bo_customeraccount (firstName, lastName, identificationNumber, phoneNumber, gymName, locationCustomer, accountType, availableUsers, paymentMethod, paymentAmount, active, activationDate, expirationDate, comments, date_add, date_upd) VALUES (:firstName, :lastName, :identificationNumber, :phoneNumber, :gymName, :locationCustomer, :accountType, :availableUsers, :paymentMethod, :paymentAmount, :active, :activationDate, :expirationDate, :comments, :date_add, :date_upd)");
-        $sql->bindParam(':id_customerAccount', $this->id_customerAccount);
         $sql->bindParam(':firstName', $this->firstName);
         $sql->bindParam(':lastName', $this->lastName);
         $sql->bindParam(':identificationNumber', $this->identificationNumber);
@@ -64,7 +63,7 @@ class BodyOlimpusCustomerAccount extends DB
 
     public function update()
     {
-        $sql = DB::DBconnect()->prepare("UPDATE bo_customeraccount SET name = :firstName, lastName = :lastName, identificationNumber = :identificationNumber, phoneNumber = :phoneNumber, gymName = :gymName, locationCustomer = :locationCustomer, accountType = :accountType, availableUsers = :availableUsers, paymentMethod = :paymentMethod, paymentAmount = :paymentAmount, active = :active, activationDate = :activationDate, expirationDate = :expirationDate, comments = :comments, date_add = :date_add, date_upd = :date_upd WHERE id_customerAccount = :id_customerAccount;");
+        $sql = DB::DBconnect()->prepare("UPDATE bo_customeraccount SET firstName = :firstName, lastName = :lastName, identificationNumber = :identificationNumber, phoneNumber = :phoneNumber, gymName = :gymName, locationCustomer = :locationCustomer, accountType = :accountType, availableUsers = :availableUsers, paymentMethod = :paymentMethod, paymentAmount = :paymentAmount, active = :active, activationDate = :activationDate, expirationDate = :expirationDate, comments = :comments, date_add = :date_add, date_upd = :date_upd WHERE id_customerAccount = :id_customerAccount;");
         $sql->bindParam(':id_customerAccount', $this->id_customerAccount);
         $sql->bindParam(':firstName', $this->firstName);
         $sql->bindParam(':lastName', $this->lastName);
