@@ -9,12 +9,6 @@
 			<div class="recentOrders">
 				<div class="cardHeader">
 					<h2>Usuarios activos</h2>
-					<div class="search">
-						<label>
-							<input type="text" placeholder="Buscar"/>
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</label>
-					</div>
 					<a href="#" class="btn">
 						+ Nuevo</a>
 				</div>
@@ -39,7 +33,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						{% for user in dataUsersAll %}
+							<tr>
+								<td>{{user.first_name}} {{user.last_name}}</td>
+								<td>${{user.payment|number_format}}</td>
+								<td>{{user.payment_method}}</td>
+								<td>
+									<span class="status delivered">Renovada</span>
+								</td>
+								<td>
+									<i class="fa-solid fa-pencil"></i>
+								</td>
+							</tr>
+						{% endfor %}
+						{# <tr>
 							<td>Jonny Alejandro Cano</td>
 							<td>Medellín</td>
 							<td>Cardio</td>
@@ -126,7 +133,7 @@
 							<td>
 								<i class="fa-solid fa-pencil"></i>
 							</td>
-						</tr>
+						</tr> #}
 					</tbody>
 				</table>
 			</div>

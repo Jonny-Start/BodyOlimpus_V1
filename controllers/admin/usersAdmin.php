@@ -1,13 +1,15 @@
 <?php
+session_start();
 require_once __DIR__ . '/../../config/config.php';
 require(__DIR__ . '/../../classes/BodyOlimpusUser.php');
+$context = $_SESSION["context"];
+$myId = $_SESSION['userAdmin_id'];
+$nameView = 'bo_users';
 
-session_start();
 if (!isset($_SESSION['userAdmin_id'])) {
     header("Location: ../loginAdmin.php");
     die();
 } else {
-    $dataUsersAll = BodyOlimpusUser::getAllUsers();
-    $nameView = 'bo_users';
-    echo $twig->render('admin/users.twig', compact('nameView', 'dataUsersAll'));
+    $dataUsersAll = BodyOlimpusUser::getDataAllMyUsers($myId);
+    echo $twig->render('admin/users.twig', compact('nameView', 'dataUsersAll','context'));
 }

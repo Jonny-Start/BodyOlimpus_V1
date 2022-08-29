@@ -4,12 +4,13 @@ require_once __DIR__ . '/../../config/config.php';
 require(__DIR__ . '/../../classes/BodyOlimpusUser.php');
 $nameView = 'bo_dashboard';
 $context = $_SESSION["context"];
+$myId = $_SESSION['userAdmin_id'];
+
 
 if (!isset($_SESSION['userAdmin_id'])) {
     header("Location: ../loginAdmin.php");
     die();
 } else {
-    $myId = $_SESSION['userAdmin_id'];
     $dataUsersAll = BodyOlimpusUser::getDataUsersDash($myId);
     $dataUsersAllRecent = BodyOlimpusUser::getDataUsersDashRecent($myId);
     $totalLastEntryDate = BodyOlimpusUser::getTotalLastEntryDate($myId);

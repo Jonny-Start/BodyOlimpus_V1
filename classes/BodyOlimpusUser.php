@@ -167,6 +167,33 @@ class BodyOlimpusUser extends DB
         $total = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $total;
     }
+    /**
+     * Extrae el nombre, apellido, email para todos mis usuarios
+     */
+    public static function getDataAllMyUsers($id_customerAccount){
+        $sql = DB::DBconnect()->prepare("SELECT * FROM bo_user WHERE id_customerAccount = ".$id_customerAccount);
+        $sql->execute();
+        $total = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $total;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static function updateGender($gender, $id_user)
     {

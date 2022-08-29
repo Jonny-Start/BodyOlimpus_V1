@@ -10,12 +10,6 @@
 			<div class="recentOrders">
 				<div class="cardHeader">
 					<h2>Cuentas de clientes admin</h2>
-					<div class="search">
-						<label>
-							<input type="text" placeholder="Buscar"/>
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</label>
-					</div>
 					<a href="/../../controllers/admin/customerAdminsCRUD.php" class="btn">
 						+ Nuevo</a>
 				</div>
@@ -40,17 +34,154 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Jonny Alejandro Cano</td>
-							<td>Medellín</td>
-                            <td>BodyGym</td>
-							<td>
-								<span class="status delivered">Activo</span>
-							</td>
-							<td>
-								<i class="fa-solid fa-pencil"></i>
-							</td>
-						</tr>
+						{% for user in dataCustomerAll %}
+							<tr>
+								<td>{{user.firstName}} {{user.lastName}}</td>
+								<td>{{user.gymName}}</td>
+								<td>{{user.locationCustomer}}</td>
+								{% if user.active == 1 %}
+									<td>
+										<span class="status delivered">Activo</span>
+									</td>
+								{% else %}
+									<td>
+										<span class="status return">Inactivo</span>
+									</td>
+								{% endif %}
+								<td style="text-align: -webkit-right;">
+									<div class="contentSelectOptions">
+										<div class="navigation">
+											<div class="menuToggle" onclick="showOptionsSelect(this)"></div>
+												<div class="menu">
+													<ul>
+													<li style="--i:0.1s;">
+														<a href="#"><ion-icon name="camera-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.2s;">
+														<a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.3s;">
+														<a href="#"><ion-icon name="trash-outline"></ion-icon></a>
+													</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						{% endfor %}
+												{% for user in dataCustomerAll %}
+							<tr>
+								<td>{{user.firstName}} {{user.lastName}}</td>
+								<td>{{user.gymName}}</td>
+								<td>{{user.locationCustomer}}</td>
+								{% if user.active == 1 %}
+									<td>
+										<span class="status delivered">Activo</span>
+									</td>
+								{% else %}
+									<td>
+										<span class="status return">Inactivo</span>
+									</td>
+								{% endif %}
+								<td style="text-align: -webkit-right;">
+									<div class="contentSelectOptions">
+										<div class="navigation">
+											<div class="menuToggle" onclick="showOptionsSelect(this)"></div>
+												<div class="menu">
+													<ul>
+													<li style="--i:0.1s;">
+														<a href="#"><ion-icon name="camera-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.2s;">
+														<a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.3s;">
+														<a href="#"><ion-icon name="trash-outline"></ion-icon></a>
+													</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						{% endfor %}
+												{% for user in dataCustomerAll %}
+							<tr>
+								<td>{{user.firstName}} {{user.lastName}}</td>
+								<td>{{user.gymName}}</td>
+								<td>{{user.locationCustomer}}</td>
+								{% if user.active == 1 %}
+									<td>
+										<span class="status delivered">Activo</span>
+									</td>
+								{% else %}
+									<td>
+										<span class="status return">Inactivo</span>
+									</td>
+								{% endif %}
+								<td style="text-align: -webkit-right;">
+									<div class="contentSelectOptions">
+										<div class="navigation">
+											<div class="menuToggle" onclick="showOptionsSelect(this)" style="z-index: 3"></div>
+												<div class="menu">
+													<ul>
+													<li style="--i:0.1s;">
+														<a href="#"><ion-icon name="camera-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.2s;">
+														<a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.3s;">
+														<a href="#"><ion-icon name="trash-outline"></ion-icon></a>
+													</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						{% endfor %}
+												{% for user in dataCustomerAll %}
+							<tr>
+								<td>{{user.firstName}} {{user.lastName}}</td>
+								<td>{{user.gymName}}</td>
+								<td>{{user.locationCustomer}}</td>
+								{% if user.active == 1 %}
+									<td>
+										<span class="status delivered">Activo</span>
+									</td>
+								{% else %}
+									<td>
+										<span class="status return">Inactivo</span>
+									</td>
+								{% endif %}
+								<td style="text-align: -webkit-right;">
+									<div class="contentSelectOptions">
+										<div class="navigation">
+											<div class="menuToggle" onclick="showOptionsSelect(this)" style="z-index: 3"></div>
+												<div class="menu">
+													<ul>
+													<li style="--i:0.1s;">
+														<a href="#"><ion-icon name="camera-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.2s;">
+														<a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+													</li>
+													<li style="--i:0.3s;">
+														<a href="#"><ion-icon name="trash-outline"></ion-icon></a>
+													</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						{% endfor %}
 					</tbody>
 				</table>
 			</div>
@@ -59,5 +190,21 @@
 		</div>
 	</div>
 </div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+	function showOptionsSelect(element){
+		let menuToggle = element;
+		if(menuToggle){
+
+			let allremove = document.querySelectorAll('.menuToggle');
+			allremove.forEach(element => {
+				element.classList.remove('active');
+			});
+
+			menuToggle.classList.toggle('active');
+		}
+	}
+</script>
 {# <script src="https://kit.fontawesome.com/572f592c32.js" crossorigin="anonymous"></script>
 {% include "admin/layout/scriptsAdmin.twig" %} #}

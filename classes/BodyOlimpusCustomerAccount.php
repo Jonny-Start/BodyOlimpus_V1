@@ -105,4 +105,13 @@ class BodyOlimpusCustomerAccount extends DB
         $dataAdmin = $sql->fetch(PDO::FETCH_ASSOC);
         return $dataAdmin;
     }
+
+    public static function getDataAllCustomersAdmin()
+    {
+        $sql = DB::DBconnect()->prepare("SELECT id_customerAccount, firstName, lastName, gymName , locationCustomer, active FROM bo_customeraccount WHERE 1");
+        $sql->execute();
+        $dataAdmin = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $dataAdmin;
+    }
+
 }
