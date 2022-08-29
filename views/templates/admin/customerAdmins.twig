@@ -1,6 +1,4 @@
 {% include "admin/layout/headAdmin.twig" %}
-{% include "admin/head.twig" %}
-
 <div class="container">
 	{% include "admin/layout/navBar.twig" %}
 
@@ -10,8 +8,7 @@
 			<div class="recentOrders">
 				<div class="cardHeader">
 					<h2>Cuentas de clientes admin</h2>
-					<a href="/../../controllers/admin/customerAdminsCRUD.php" class="btn">
-						+ Nuevo</a>
+					<a href="/../controllers/admin/customerAdminsCRUD" class="btn"> + Nuevo</a>
 				</div>
 				<table>
 					<thead>
@@ -55,13 +52,13 @@
 												<div class="menu">
 													<ul>
 													<li style="--i:0.1s;">
-														<a href="#"><i class="fa-solid fa-user-pen"></i></a>
+														<a href="/../controllers/admin/customerAdminsCRUD?idCustomerAdmin={{user.id_customerAccount}}"><i class="fa-solid fa-user-pen"></i></a>
 													</li>
 													<li style="--i:0.2s;">
-														<a href="#"><i class="fa-solid fa-eye"></i></a>
+														<a href="/../controllers/admin/customerAdminsCRUD?idCustomerAdmin={{user.id_customerAccount}}&view=true"><i class="fa-solid fa-eye"></i></a>
 													</li>
 													<li style="--i:0.3s;">
-														<a href="#"><ion-icon name="trash-outline"></ion-icon></a>
+														<a href="#"><i class="fa-solid fa-trash-can"></i></a>
 													</li>
 													</ul>
 												</div>
@@ -74,21 +71,18 @@
 					</tbody>
 				</table>
 			</div>
-
-
 		</div>
 	</div>
 </div>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>
 	function showOptionsSelect(element){
 		let menuToggle = element;
 		if(menuToggle){
-
 			let allremove = document.querySelectorAll('.menuToggle');
 			allremove.forEach(element => {
-				element.classList.remove('active');
+				if(element != menuToggle){
+					element.classList.remove('active');
+				}
 			});
 
 			menuToggle.classList.toggle('active');

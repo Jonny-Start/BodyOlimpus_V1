@@ -1,0 +1,114 @@
+{% include "admin/layout/headAdmin.twig" %}
+
+<div class="container">
+	{% include "admin/layout/navBar.twig" %}
+	<div class="main">
+		{% include "admin/layout/topBar.twig" %}
+        <div id="content">
+            <div id="contentForm">
+                <form class="row g-3" action="./../../controllers/admin/customerAdminsCRUD.php" method="post">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label"><span class="required">*</span>Nombre</label>
+                        <input type="text" class="form-control" name="firstName" id="firstName" value="{{dataCustomer.firstName}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label"><span class="required">*</span>Apellido</label>
+                        <input type="text" class="form-control" name="lastName" id="lastName" value="{{dataCustomer.lastName}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="identificationNumber" class="form-label"><span class="required">*</span>Numero de documento</label>
+                        <input type="number" min="0" class="form-control" name="identificationNumber" id="identificationNumber" value="{{dataCustomer.identificationNumber}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phoneNumber" class="form-label">Numero de Telefono</label>
+                        <input type="number" min="0" class="form-control" name="phoneNumber" id="phoneNumber" value="{{dataCustomer.phoneNumber}}" {% if onlyView == true %}readonly disabled{% endif %}>
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label"><span class="required">*</span>Correo electronico</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="micorreo@correo.com" value="{{dataCustomer.email}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="gymName" class="form-label"><span class="required">*</span>Nombre del GYM</label>
+                        <input type="text" class="form-control" name="gymName" id="gymName" value="{{dataCustomer.gymName}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="locationCustomer" class="form-label">Lugas del GYM</label>
+                        <input type="text" class="form-control" name="locationCustomer" id="locationCustomer" value="{{dataCustomer.locationCustomer}}" {% if onlyView == true %}readonly disabled{% endif %}>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="accountType" class="form-label"><span class="required">*</span>Perfil</label>
+                        <select name="accountType" id="accountType" class="form-select" {% if onlyView == true %}readonly disabled{% endif %} required>
+                        <option {% if dataCustomer.accountType == 0 %}selected{% endif %}>Perfil...</option>
+                        <option value="3" {% if dataCustomer.accountType == 3 %}selected{% endif %}>Administrador</option>
+                        <option value="2" {% if dataCustomer.accountType == 2 %}selected{% endif %}>Administrador Funcional</option>
+                        <option value="1" {% if dataCustomer.accountType == 1 %}selected{% endif %}>Super Adminitrador</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="availableUsers" class="form-label"><span class="required">*</span>Cant. Usuarios</label>
+                        <input type="number" min="0" class="form-control" name="availableUsers" id="availableUsers" value="{{dataCustomer.availableUsers}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="paymentMethod" class="form-label"><span class="required">*</span>Metodo de pago</label>
+                        <input type="text" class="form-control" name="paymentMethod" id="paymentMethod" value="{{dataCustomer.paymentMethod}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="paymentAmount" class="form-label"><span class="required">*</span>Cantidad de pago</label>
+                        <input type="number" min="0" class="form-control" name="paymentAmount" id="paymentAmount" value="{{dataCustomer.paymentAmount}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="active" class="form-label"><span class="required">*</span>Activo</label>
+                        <select name="active" id="active" class="form-select" {% if onlyView == true %}readonly disabled{% endif %} required>
+                        <option value="1" {% if dataCustomer.active == 1 %}selected{% endif %}>Activo</option>
+                        <option value="0" {% if dataCustomer.active == 0 %}selected{% endif %}>Desactivado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="activationDate" class="form-label"><span class="required">*</span>Fecha de activacion</label>
+                        <input type="date" class="form-control" name="activationDate" id="activationDate" value="{{dataCustomer.activationDate}}" {% if onlyView == true %}readonly disabled{% endif %} required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="expirationDate" class="form-label">Fecha de finalizacion</label>
+                        <input type="date" class="form-control" name="expirationDate" id="expirationDate" value="{% if dataCustomer.expirationDate != "" %}{{dataCustomer.expirationDate}}{% else %}00/00/0000{% endif %}" {% if onlyView == true %}readonly disabled{% endif %}>
+                    </div>
+                    <div class="mb-12">
+                        <label for="comments" class="form-label">Comentarios</label>
+                        <textarea class="form-control" name="comments" id="comments" rows="3" {% if onlyView == true %}readonly disabled{% endif %}>{{dataCustomer.comments}}</textarea>
+                    </div>
+                    <div class="mb-6">
+                        <label for="imgGym" class="form-label">Imagen tema claro</label>
+                        <input class="form-control" type="file" name="imgGym" id="imgGym" {% if onlyView == true %}readonly disabled{% endif %}>
+                        <span>{{dataCustomer.imgGym}}</span>
+                    </div>
+                    <div class="mb-6">
+                        <label for="imgBlackGym" class="form-label">Imagen tema Oscuro</label>
+                        <input class="form-control" type="file" name="imgBlackGym" id="imgBlackGym" {% if onlyView == true %}readonly disabled{% endif %}>
+                        <span>{{dataCustomer.imgBlackGym}}</span>
+                    </div>
+                    {# <div class="col-12">
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Check me out
+                        </label>
+                        </div>
+                    </div> #}
+                    {% if onlyView != true %}
+                        {% if dataCustomer == "" %}
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary" name="newCustomer" value="true">Guardar</button>
+                        </div>
+                        {% else %}
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary" name="updateCustomer" value="true">Actualizar</button>
+                        </div>
+                        <input type="hidden" name="id_customerAccount" value="{{dataCustomer.id_customerAccount}}">
+                        {% endif %}
+                    {% endif %}
+                </form>    
+            </div>
+        <div>
+    </div>
+</div>
+
+{% include "admin/layout/footerAdmin.twig" %}

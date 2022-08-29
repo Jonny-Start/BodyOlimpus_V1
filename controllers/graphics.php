@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     die();
 } else {
     $id_user = $_SESSION['user_id'];
-    $dataUser = BodyOlimpusUser::getDataUserIMC($id_user);
+    // $dataUser = BodyOlimpusUser::getDataUserIMC($id_user); //----------------------------------------------------------------------------------------------------------------
     if (!empty($dataUser) && !empty($dataUser['actual_weight']) && !empty($dataUser['height_user'])) {
         //Calcular IMC
         $peso = number_format(($dataUser['actual_weight']), 1);
