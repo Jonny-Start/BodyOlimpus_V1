@@ -63,7 +63,7 @@ class BodyOlimpusCustomerAccount extends DB
             $sql->bindParam(':date_upd', $this->date_upd);
             $result = $sql->execute();
             $hola = $sql->debugDumpParams();
-            echo "\nPDO::errorInfo():\n";
+            echo "\nPDO::query():\n";
             die();
             if ($result == true) {
                 return "1";
